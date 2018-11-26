@@ -1,1 +1,1 @@
-# wordpress-theme-staff-intranet
+# WordPress Theme: Staff Intranet
