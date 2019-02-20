@@ -17,9 +17,7 @@
                     <h1>Waterloo Region District School Board</h1>
                     <p>51 Ardelt Avenue<br />
                     Kitchener, ON N2C 2R5</p>
-                    <p>Switchboard: 519-570-0003<br />
-                    <a href="https://www.wrdsb.ca/about-the-wrdsb/contact/">Contact the WRDSB</a></p>
-                    <p><a href="https://www.wrdsb.ca/about-the-wrdsb/contact/website-feedback/" target="_blank">Website Feedback Form</a></p>
+                    <p>Switchboard: 519-570-0003</p>
                 </address>
             </div>
 
