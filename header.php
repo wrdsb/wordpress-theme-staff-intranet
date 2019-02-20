@@ -56,29 +56,6 @@
   <?php wrdsb_secondary_school_colours(); ?>
 
   <!-- Google Analytics Tracking Code -->
-
-  <?php if (wrdsb_i_am_a_corporate_site()) { ?>
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-16094689-1', 'auto');
-    ga('require', 'linkid');
-    ga('send', 'pageview');
-  </script>
-  <script type="text/javascript">
-  /*<![CDATA[*/
-  (function() {
-    var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;
-    sz.src = '//siteimproveanalytics.com/js/siteanalyze_80186.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);
-  })();
-  /*]]>*/
-  </script>
-  <?php } 
-
-  if (wrdsb_i_am_a_staff_site()) { ?>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -88,19 +65,6 @@
     ga('require', 'linkid');
     ga('send', 'pageview');
   </script>
-  <?php } 
-
-  if (wrdsb_i_am_a_school()) { ?>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-16094689-23', 'auto');
-      ga('require', 'linkid');
-      ga('send', 'pageview');
-    </script>
-  <?php } ?>
 </head>
 
 <body id="top">
