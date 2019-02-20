@@ -22,13 +22,11 @@
             </div>
 
             <div class="col-sm-6 col-md-3" aria-labelledby="connect-wrdsb">
-                <?php if (wrdsb_i_am_a_staff_site()) { ?>
-                    <?php if (wrdsb_get_school_code()) { ?>
-                        <h1>Trillium Data</h1>
-                        <ul>
-                            <li><a href="<?php echo get_site_url(); ?>/trillium/classes">Class lists</a></li>
-                        </ul>
-                    <?php } ?>
+                <?php if (wrdsb_get_school_code()) { ?>
+                    <h1>Trillium Data</h1>
+                    <ul>
+                        <li><a href="<?php echo get_site_url(); ?>/trillium/classes">Class lists</a></li>
+                    </ul>
                 <?php } ?>
             </div>
 
