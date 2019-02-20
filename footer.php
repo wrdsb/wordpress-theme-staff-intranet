@@ -48,6 +48,17 @@
     </div>
 </div>
 
+<div class="container" id="loginbar" role="navigation" aria_labelledby="adminbar">
+    <p id="adminbar" class="copyright" style="text-align: center;">
+        <?php
+            // display the login/logout link
+            if ( is_user_logged_in() ) {
+                wp_loginout();
+            }
+        ?>
+    </p>
+</div>
+
 <?php wp_footer(); ?>
 
 </body>
