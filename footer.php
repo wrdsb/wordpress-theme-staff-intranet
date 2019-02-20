@@ -22,15 +22,20 @@
             </div>
 
             <div class="col-sm-6 col-md-3" aria-labelledby="connect-wrdsb">
+                <h1>G Suite</h1>
+                <p><a style="color:white" href="https://mail.google.com"><img style="display:inline" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo_gmail_32px.png" />&nbsp;Gmail</a></p>
+                <p><a style="color:white" href="https://calendar.google.com"><img style="display:inline" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo_calendar_32px.png" />&nbsp;Calendar</a></p>
+                <p><a style="color:white" href="https://drive.google.com"><img style="display:inline" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo_drive_32px.png" />&nbsp;Drive</a></p>
+                <p><a style="color:white" href="https://groups.google.com"><img style="display:inline" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo_groups_32px.png" />&nbsp;Groups</a></p>
+            </div>
+
+            <div class="col-sm-6 col-md-3" role="region">
                 <?php if (wrdsb_get_school_code()) { ?>
                     <h1>Trillium Data</h1>
                     <ul>
                         <li><a href="<?php echo get_site_url(); ?>/trillium/classes">Class lists</a></li>
                     </ul>
                 <?php } ?>
-            </div>
-
-            <div class="col-sm-6 col-md-3" role="region">
             </div>
 
             <div class="col-sm-6 col-md-3" role="region">

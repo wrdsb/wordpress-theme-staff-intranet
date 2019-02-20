@@ -51,6 +51,9 @@
         $("table").wrap("<div class='table-responsive'></div>");
     </script>
 
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <?php wp_head();?>
 
     <!-- Google Analytics Tracking Code -->
