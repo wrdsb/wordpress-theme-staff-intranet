@@ -27,6 +27,7 @@
                 <p><a style="color:white" href="https://calendar.google.com"><img style="display:inline" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo_calendar_32px.png" />&nbsp;Calendar</a></p>
                 <p><a style="color:white" href="https://drive.google.com"><img style="display:inline" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo_drive_32px.png" />&nbsp;Drive</a></p>
                 <p><a style="color:white" href="https://groups.google.com"><img style="display:inline" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo_groups_32px.png" />&nbsp;Groups</a></p>
+                <p><a style="color:white" href="https://staff.wrdsb.ca/g-suite/">More...</a></p>
             </div>
 
             <div class="col-sm-6 col-md-3" role="region">
