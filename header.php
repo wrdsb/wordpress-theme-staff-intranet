@@ -51,10 +51,16 @@
         $("table").wrap("<div class='table-responsive'></div>");
     </script>
 
+
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/introjs.min.css" rel="stylesheet">
+    <style>
+        .introjs-helperLayer {
+            background-color: #555555;
+        }
+    </style>
 
     <?php wp_head();?>
 
