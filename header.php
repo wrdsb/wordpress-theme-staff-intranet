@@ -86,7 +86,7 @@
             <div class="col-md-9 col-sm-8">
                 <div id="logo" role="heading">
                     <a aria-labelledby="logo" href="<?php echo home_url(); ?>/"><span><?php echo get_bloginfo('name'); ?></span>
-                        <p data-hintPosition="top-middle" data-hint="Click the green 'New Features' button in the top, right corner for a tour of our newest features." id="sitename"><?php echo get_bloginfo('name'); ?></p>
+                        <p id="sitename"><?php echo get_bloginfo('name'); ?></p>
                         <?php if (get_bloginfo('description') != '') {?>
                             <p id="sitedescription"><?php echo get_bloginfo('description'); ?></p>
                         <?php }?>
@@ -96,7 +96,6 @@
             <div class="col-md-3 col-sm-4">
                 <div class="staff-shortcuts" role="complementary" aria-labelledby="staff-shortcut-list">
                     <div id="staff-shortcut-list">
-                        <button class="btn btn-success" href="javascript:void(0);" onclick="startIntro();">New Features, Mar. 2019</button>
                     </div>
                     <div class="searchbox" role="search" aria-labelledby="search">
                         <form action="<?php echo home_url(); ?>/" method="get">
