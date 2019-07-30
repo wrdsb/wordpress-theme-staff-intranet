@@ -36,6 +36,3 @@ if ($post->post_content == '') {
 }
 
 get_template_part('partials/content', 'cats-tags');
-?>
-
-<p class="editpost" role="link"><?php edit_post_link(__('Edit'));?></p>
