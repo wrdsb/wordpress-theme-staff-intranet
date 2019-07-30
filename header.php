@@ -80,88 +80,13 @@
 
 <!-- header -->
 <div class="container container-top">
-
-    <div class="header">
-        <div class="row">
-            <div class="col-md-9 col-sm-8">
-                <div id="logo" role="heading">
-                    <a aria-labelledby="logo" href="<?php echo home_url(); ?>/"><span><?php echo get_bloginfo('name'); ?></span>
-                        <p id="sitename"><?php echo get_bloginfo('name'); ?></p>
-                        <?php if (get_bloginfo('description') != '') {?>
-                            <p id="sitedescription"><?php echo get_bloginfo('description'); ?></p>
-                        <?php }?>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4">
-                <div class="staff-shortcuts" role="complementary" aria-labelledby="staff-shortcut-list">
-                    <div id="staff-shortcut-list">
-                    </div>
-                    <div class="searchbox" role="search" aria-labelledby="search">
-                        <form action="<?php echo home_url(); ?>/" method="get">
-                            <input aria-label="Search" type="text" name="s" id="search" value="<?php the_search_query();?>" placeholder="Search" />
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- /.header -->
-
-    <div class="navbar my-navbar" role="navigation" aria-labelledby="navbar-header">
-        <div id="navbar-header">
-            <button type="button" class="navbar-toggle togglesearch" data-toggle="collapse" data-target=".navbar-search">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-search"></span>
-            </button>
-
-            <button type="button" class="navbar-toggle togglenav" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-
-            <?php
-                $strl = get_bloginfo('name');
-                $tempstrl = explode(" ", $strl);
-                $newstrl = '';
-
-                foreach ($tempstrl as $a) {
-                    if ('District' == $a or 'Public' == $a or 'Collegiate' == $a or 'Secondary' == $a or 'High' == $a) {
-                        $newstrl .= "<br />";
-                    }
-                    $newstrl .= " " . $a;
-                }
-            ?>
-            <a class="navbar-brand" href="<?php echo home_url(); ?>/"><?php echo $newstrl; ?></a>
-        </div>
-
-        <div class="collapse navbar-search" role="search" aria-labelledby="mobileSearch">
-            <form action="<?php echo home_url(); ?>/" method="get">
-                <input aria-label="Search" type="text" name="s" id="mobileSearch" value="<?php the_search_query();?>" placeholder="Search" />
-            </form>
-        </div>
-
-        <div id="menu" role="navigation" aria_label="Menu">
-            <?php if (has_nav_menu('top')) {
-                wp_nav_menu(array('theme_location' => 'top', 'menu_class' => 'nav nav-justified', 'container_class' => 'collapse navbar-collapse'));
-            } else {
-                wp_page_menu(array('depth' => 1, 'show_home' => true, 'menu_class' => 'collapse navbar-collapse'));
-            }?>
-        </div>
-    </div> <!-- /.navbar -->
-
+    <?php get_template_part('partials/header', 'masthead'); ?>
+    <?php get_template_part('partials/header', 'navbar'); ?>
 </div> <!-- /.container-top -->
 
-<?php if (is_front_page()) {
-    // if there is a header image
-    if (get_header_image()) { ?>
-        <div class="container" role="Img" aria_label="Header Image">
-            <img src="<?php header_image();?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
-        </div>
-    <?php } 
-} ?>
-
-<?php if (!is_front_page()) {?>
-    <?php the_breadcrumb();?>
-<?php }?>
+<?php
+if (is_front_page()) {
+    get_template_part('partials/header', 'frontpage');
+} else {
+    get_breadcrumbs();
+}
