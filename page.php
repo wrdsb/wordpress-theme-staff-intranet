@@ -1,5 +1,18 @@
 <?php get_header(); ?>
 
+<div class="container container-top">
+    <?php get_template_part('partials/header', 'masthead'); ?>
+    <?php get_template_part('partials/header', 'navbar'); ?>
+</div>
+
+<?php
+if (is_front_page()) {
+    get_template_part('partials/header', 'frontpage');
+} else {
+    get_breadcrumbs();
+}
+?>
+
 <div class="container">
     <div class="row">
         <?php if (! current_user_can_view_content()) {

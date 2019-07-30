@@ -75,18 +75,4 @@
         ga('send', 'pageview');
     </script>
 </head>
-
 <body id="top">
-
-<!-- header -->
-<div class="container container-top">
-    <?php get_template_part('partials/header', 'masthead'); ?>
-    <?php get_template_part('partials/header', 'navbar'); ?>
-</div> <!-- /.container-top -->
-
-<?php
-if (is_front_page()) {
-    get_template_part('partials/header', 'frontpage');
-} else {
-    get_breadcrumbs();
-}
