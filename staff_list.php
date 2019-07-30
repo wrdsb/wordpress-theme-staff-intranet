@@ -13,7 +13,7 @@ Template Name: Staff List
       // Start the content loop.
       while ( have_posts() ) : the_post();
         // Include the post format-specific content template.
-        get_template_part( 'content', 'page' );
+        get_template_part('partials/content', 'page');
       endwhile;
 
       // User Loop
