@@ -42,7 +42,7 @@
 	    <?php
       }
 
-      get_sidebar('left');
+      get_template_part('partials/sidebar', 'left');
 
 
     if (is_front_page() && wrdsb_i_am_a_school_exception()) { ?>
@@ -84,7 +84,7 @@
       <?php
       }
 
-      get_sidebar('left');
+      get_template_part('partials/sidebar', 'left');
     
       if (is_front_page() && wrdsb_i_am_a_school_exception()) { ?>
          <p><a href="https://www.canadahelps.org/dn/15506" target="_blank" onclick="ga('send', 'event', 'schoolBanners', 'click_banner', 'wefi', 'https://www.canadahelps.org/dn/15506',{'nonInteraction':1});"><img src="https://www.wrdsb.ca/wefi/wp-content/uploads/sites/19/wefi_donate.jpg" alt="Donate Online! Waterloo Education Foundation Inc. (WEFI)"></a></p>
@@ -144,14 +144,14 @@
     if (($has_left === TRUE) and ($has_right === TRUE)):
       echo '<div class="col-sm-3 col-md-2 col-lg-2" role="complementary">';
 
-      get_sidebar('right');
+      get_template_part('partials/sidebar', 'right');
       echo '</div>';
     # Just left sidebar
       # Nothing to do
     # Just right sidebar
     elseif (($has_left === FALSE) and ($has_right === TRUE)):
       echo '<div class="col-sm-3" role="complementary">';
-      get_sidebar('right');
+      get_template_part('partials/sidebar', 'right');
       echo '</div>';
     # No sidebars
       # Nothing to do
