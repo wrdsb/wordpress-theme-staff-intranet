@@ -51,64 +51,74 @@
             'parent'       => $post->ID,
             'post_type'    => 'page',
         ));
+
+        $menu_items = array();
+
+        foreach ($siblings as $sibling) {
+            $menu_item = '';
+            if (0 != $sibling->post_parent) {
+                if ($sibling->ID == $post->ID) {
+                    $menu_item .= '<li>';
+                    $menu_item .= '<strong>';
+                    $menu_item .= '<a href="' . get_permalink($sibling->ID) . '">' . $sibling->post_title . '</a>';
+                    $menu_item .= '</strong>';
+                } else {
+                    $menu_item .= '<li>';
+                    $menu_item .= '<a href="' . get_permalink($sibling->ID) . '">' . $sibling->post_title . '</a>';
+                }
+            }
+            if ($sibling->ID == $post->ID && $children) {
+                if (0 != $post->post_parent) {
+                    $menu_item .= '<ul class="nav_current_page_children_container">';
+                } else {
+                    $menu_item .= '<ul>';
+                }
+                foreach ($children as $child) {
+                    $menu_item .= '<li><a href="' . get_permalink($child->ID) . '">' . $child->post_title . '</a></li>';
+                }
+                $menu_item .= '</ul>';
+            }
+            if (0 != $sibling->post_parent) {
+                if ($sibling->ID == $post->ID) {
+                    $menu_item .= '</strong>';
+                }
+                $menu_item .= '</li>';
+            }
+            if (strlen($menu_item) > 0) {
+                $menu_items[] = $menu_item;
+            }
+        }
         ?>
         
-        <div class="sub-navbar-header">
-            <button type="button" class="navbar-toggle toggle-subnav" data-toggle="collapse" data-target=".sub-navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <span class="navbar-brand">Subnav</span>
-        </div>
-        
-        <div class="collapse sub-navbar-collapse">
-            <div class="sub-menu-heading">
-                <?php if (0 != $post->post_parent) {?>
-                    <span><a href="<?php echo get_permalink($post->post_parent); ?>"><?php echo get_the_title($post->post_parent); ?></a></span>
-                <?php } else {?>
-                    <span><a href="<?php echo get_permalink($post->ID); ?>"><?php echo get_the_title($post->ID); ?></a></span>
-                <?php } ?>
+        <?php if (count($menu_items) > 0) { ?>
+            <div class="sub-navbar-header">
+                <button type="button" class="navbar-toggle toggle-subnav" data-toggle="collapse" data-target=".sub-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <span class="navbar-brand">Subnav</span>
             </div>
-        
-            <div class="sub-menu-items">
-                <ul>
-                    <?php
-                    foreach ($siblings as $sibling) {
-                        if (0 != $sibling->post_parent) {
-                            if ($sibling->ID == $post->ID) {
-                                echo '<li>';
-                                echo '<strong>';
-                                echo '<a href="' . get_permalink($sibling->ID) . '">' . $sibling->post_title . '</a>';
-                                echo '</strong>';
-                            } else {
-                                echo '<li>';
-                                echo '<a href="' . get_permalink($sibling->ID) . '">' . $sibling->post_title . '</a>';
-                            }
-                        }
-                        if ($sibling->ID == $post->ID && $children) {
-                            if (0 != $post->post_parent) {
-                                echo '<ul class="nav_current_page_children_container">';
-                            } else {
-                                echo '<ul>';
-                            }
-                            foreach ($children as $child) {
-                                echo '<li><a href="' . get_permalink($child->ID) . '">' . $child->post_title . '</a></li>';
-                            }
-                            echo '</ul>';
-                        }
-                        if (0 != $sibling->post_parent) {
-                            if ($sibling->ID == $post->ID) {
-                                echo '</strong>';
-                            }
-                            echo '</li>';
-                        }
-                    }
-                    ?>
-                </ul>
+            
+            <div class="collapse sub-navbar-collapse">
+                <div class="sub-menu-heading">
+                    <?php if (0 != $post->post_parent) {?>
+                        <span><a href="<?php echo get_permalink($post->post_parent); ?>"><?php echo get_the_title($post->post_parent); ?></a></span>
+                    <?php } else {?>
+                            <span><a href="<?php echo get_permalink($post->ID); ?>"><?php echo get_the_title($post->ID); ?></a></span>
+                    <?php } ?>
+                </div>
+            
+                <div class="sub-menu-items">
+                    <ul>
+                        <?php foreach ($menu_items as $menu_item) {
+                            echo $menu_item;
+                        } ?>
+                    </ul>
+                </div>
             </div>
-        </div>
+        <?php } ?>
     <?php } ?>
 
 </div> <!-- end navigation -->
