@@ -20,7 +20,6 @@
     <div class="container">
         <div class="row">
             <?php
-            $has_left = false;
             $has_left = !is_front_page() ? true: false; // if not front page, has a left sidebar
             $has_right = false;
             if (is_active_sidebar('sidebar-left') || has_nav_menu('left')) {
