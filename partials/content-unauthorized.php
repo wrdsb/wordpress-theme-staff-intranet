@@ -32,7 +32,7 @@ switch ($privacy_option) {
     </p>
     <p>
         This section of the staff intranet 
-        ( <em>"<?php echo get_bloginfo('name'); ?>"</em> )
+        (&nbsp;<em>"<?php echo get_bloginfo('name'); ?>"</em>&nbsp;)
         can only be viewed by its
         <?php echo $authorized_role; ?>s.
     </p>
