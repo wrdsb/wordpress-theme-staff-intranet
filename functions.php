@@ -462,15 +462,16 @@ function current_user_can_view_content()
  *
  * @return string URL to redirect to on login. Must be absolute.
  */
-function my_forcelogin_redirect() {
-    return home_url( '/' );
+function wrdsb_forcelogin_redirect()
+{
+    return home_url('/');
 }
-add_filter('v_forcelogin_redirect', 'my_forcelogin_redirect');
+add_filter('v_forcelogin_redirect', 'wrdsb_forcelogin_redirect');
 
-function my_forcelogin_hide_backtoblog() {
+function wrdsb_forcelogin_hide_backtoblog() {
     echo '<style type="text/css">#backtoblog{display:none;}</style>';
 }
-add_action('login_enqueue_scripts', 'my_forcelogin_hide_backtoblog');
+add_action('login_enqueue_scripts', 'wrdsb_forcelogin_hide_backtoblog');
 
 /* Breadcrumb Links */
 function get_breadcrumbs()
@@ -597,6 +598,16 @@ function wrdsb_i_am_a_staff_site()
     );
     if (in_array(($host[0]), $my_domains)) {
         return true;
+    }
+}
+
+function wrdsb_i_am_a_sub_site()
+{
+    $blog_id = get_current_blog_id();
+    if ($blog_id != 1) {
+        return true;
+    } else {
+        return false;
     }
 }
 
@@ -935,7 +946,13 @@ if (!function_exists('favicon_link')) {
 function wrdsb_change_search_url()
 {
     if (is_search() && ! empty($_GET['s'])) {
-        wp_redirect("/search/content/?wp-posts-search=" . urlencode(get_query_var('s')));
+        $search_url = "/search/content/?wp-posts-search=";
+        $search_url .= urlencode(get_query_var('s'));
+        if (wrdsb_i_am_a_sub_site()) {
+            $search_url .= '&search-filter-site-name=';
+            $search_url .= urlencode(get_bloginfo('name'));
+        }
+        wp_redirect($search_url);
         exit();
     }
 }
