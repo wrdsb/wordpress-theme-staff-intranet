@@ -2,22 +2,24 @@
 
 <div class="container container-top">
     <?php get_template_part('partials/header', 'masthead'); ?>
-    <?php get_template_part('partials/header', 'navbar'); ?>
+
+    <?php if (! current_user_can_view_content()) {
+        get_template_part('partials/content', 'unauthorized');
+    } else {
+        get_template_part('partials/header', 'navbar');
+
+        if (is_front_page()) {
+            get_template_part('partials/header', 'frontpage');
+        } else {
+            get_breadcrumbs();
+        }
+    } ?>
 </div>
 
-<?php
-if (is_front_page()) {
-    get_template_part('partials/header', 'frontpage');
-} else {
-    get_breadcrumbs();
-}
-?>
-
-<div class="container">
-    <div class="row">
-        <?php if (! current_user_can_view_content()) {
-            get_template_part('partials/content', 'unauthorized');
-        } else {
+<?php if (current_user_can_view_content()) { ?>
+    <div class="container">
+        <div class="row">
+            <?php
             $has_left = !is_front_page() ? true: false; // if not front page, has a left sidebar
             $has_right = false;
             if (is_active_sidebar('sidebar-left') || has_nav_menu('left')) {
@@ -61,26 +63,26 @@ if (is_front_page()) {
             # Both sidebars
             # content area
             if (($has_left === true) and ($has_right === true)):
-            echo '<div class="col-sm-6 col-md-8 col-lg-8" role="main">';
-                    # Just left sidebar
-                    elseif (($has_left === true) and ($has_right === false)):
-            echo '<div class="col-sm-9 col-lg-9" role="main">';
-                    # Just right sidebar
-                    elseif (($has_left === false) and ($has_right === true)):
-            echo '<div class="col-sm-9" role="main">';
-                    # No sidebars
-                    elseif (($has_left === false) and ($has_right === false)):
-            echo '<div class="col-sm-12 col-lg-12" role="main">';
-                    endif; ?>
+                echo '<div class="col-sm-6 col-md-8 col-lg-8" role="main">';
+            # Just left sidebar
+            elseif (($has_left === true) and ($has_right === false)):
+                echo '<div class="col-sm-9 col-lg-9" role="main">';
+            # Just right sidebar
+            elseif (($has_left === false) and ($has_right === true)):
+                echo '<div class="col-sm-9" role="main">';
+            # No sidebars
+            elseif (($has_left === false) and ($has_right === false)):
+                echo '<div class="col-sm-12 col-lg-12" role="main">';
+            endif; ?>
 
             <?php // check if the post has a Post Thumbnail assigned to it.
             if (has_post_thumbnail()) {
                 echo '<div class="featuredimage" rol="presentation">';
                 if (($has_left === true) and ($has_right === true)):
-                the_post_thumbnail('wrdsb-two-sidebars', 'alt'); elseif (($has_left === true) and ($has_right === false)):
-                the_post_thumbnail('wrdsb-one-sidebar', 'alt'); elseif (($has_left === false) and ($has_right === true)):
-                the_post_thumbnail('wrdsb-one-sidebar', 'alt'); elseif (($has_left === false) and ($has_right === false)):
-                the_post_thumbnail('wrdsb-full-width', 'alt');
+                    the_post_thumbnail('wrdsb-two-sidebars', 'alt'); elseif (($has_left === true) and ($has_right === false)):
+                    the_post_thumbnail('wrdsb-one-sidebar', 'alt'); elseif (($has_left === false) and ($has_right === true)):
+                    the_post_thumbnail('wrdsb-one-sidebar', 'alt'); elseif (($has_left === false) and ($has_right === false)):
+                    the_post_thumbnail('wrdsb-full-width', 'alt');
                 endif;
                 echo '</div>';
             } ?>
@@ -88,7 +90,6 @@ if (is_front_page()) {
             <?php
             // Start the Loop.
             while (have_posts()) : the_post();
-
                 // Include the page content template.
                 get_template_part('partials/content', 'page');
                 // If comments are open or we have at least one comment, load up the comment template.
@@ -126,8 +127,9 @@ if (is_front_page()) {
                 # No sidebars
                 # Nothing to do
             endif;
-        } ?>
+            ?>
+        </div>
     </div>
-</div>
+<?php } ?>
 
 <?php get_footer();
