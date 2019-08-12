@@ -468,7 +468,8 @@ function wrdsb_forcelogin_redirect()
 }
 add_filter('v_forcelogin_redirect', 'wrdsb_forcelogin_redirect');
 
-function wrdsb_forcelogin_hide_backtoblog() {
+function wrdsb_forcelogin_hide_backtoblog()
+{
     echo '<style type="text/css">#backtoblog{display:none;}</style>';
 }
 add_action('login_enqueue_scripts', 'wrdsb_forcelogin_hide_backtoblog');
@@ -531,25 +532,34 @@ function get_breadcrumbs()
         } elseif (is_home()) {
             echo '<li>News &amp; Announcements</li>';
         }
-    } elseif (is_tag()) {single_tag_title();} elseif (is_category()) {
+    } elseif (is_tag()) {
+        single_tag_title();
+    } elseif (is_category()) {
         echo "<li>";
         the_category();
-        echo '</li>';} elseif (is_day()) {
+        echo '</li>';
+    } elseif (is_day()) {
         echo "<li>Archive for ";
         the_time('F jS, Y');
-        echo '</li>';} elseif (is_month()) {
+        echo '</li>';
+    } elseif (is_month()) {
         echo "<li>Archive for ";
         the_time('F, Y');
-        echo '</li>';} elseif (is_year()) {
+        echo '</li>';
+    } elseif (is_year()) {
         echo "<li>Archive for ";
         the_time('Y');
-        echo '</li>';} elseif (is_author()) {
+        echo '</li>';
+    } elseif (is_author()) {
         echo "<li>Author Archive";
-        echo '</li>';} elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
+        echo '</li>';
+    } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
         echo "<li>Blog Archives";
-        echo '</li>';} elseif (is_search()) {
+        echo '</li>';
+    } elseif (is_search()) {
         echo "<li>Search Results";
-        echo '</li>';}
+        echo '</li>';
+    }
     echo '</ol>';
     echo '</div>';
 }
