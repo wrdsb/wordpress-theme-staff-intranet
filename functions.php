@@ -970,20 +970,20 @@ add_action('template_redirect', 'wrdsb_change_search_url');
 
 function winston_get_site_type()
 {
-    get_option('winston_site_type');
+    return get_option('winston_site_type');
 }
 
 function winston_get_business_unit()
 {
-    get_option('winston_business_unit');
+    return get_option('winston_business_unit');
 }
 
 function winston_get_business_unit_label()
 {
-    get_option('winston_business_unit_label');
+    return get_option('winston_business_unit_label');
 }
     
 function winston_get_business_unit_url()
 {
-    get_option('winston_business_unit_url');
+    return get_option('winston_business_unit_url');
 }
