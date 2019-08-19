@@ -66,6 +66,3 @@
                 the_tags('',' &middot; ','');
                 echo '</p>';
 	}
-?>
-
-<p class="editpost" role="link"><?php edit_post_link(__('Edit'));?></p>

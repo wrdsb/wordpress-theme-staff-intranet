@@ -418,7 +418,7 @@ if (!function_exists('wrdsb_global_vars')) {
     function wrdsb_global_vars()
     {
         global $wrdsbvars;
-        $wrdsbvars['asset_version'] = "1/1.0.3";
+        $wrdsbvars['asset_version'] = "intranet/2";
         // to use: $GLOBALS['wrdsbvars']['asset_version']
     }
     add_action('parse_query', 'wrdsb_global_vars');
@@ -445,6 +445,7 @@ function the_breadcrumb()
             echo '<li>';
             the_title();
             echo '</li>';
+            echo '<li>' . edit_post_link(__(' [ edit content ]')). '</li>';
         } elseif (is_singular('certification')) {
             echo '<li>Certifications</li>';
             echo '<li>';
@@ -455,16 +456,19 @@ function the_breadcrumb()
             echo '<li>';
             the_title();
             echo '</li>';
+            echo '<li>' . edit_post_link(__(' [ edit content ]')). '</li>';
         } elseif (is_singular('shsm')) {
             echo '<li>SHSM</li>';
             echo '<li>';
             the_title();
             echo '</li>';
+            echo '<li>' . edit_post_link(__(' [ edit content ]')). '</li>';
         } elseif (is_singular('sfwd-courses')) {
             echo '<li>Courses</li>';
             echo '<li>';
             the_title();
             echo '</li>';
+            echo '<li>' . edit_post_link(__(' [ edit content ]')). '</li>';
         } elseif (is_page()) {
             if ($post->post_parent) {
                 $anc    = get_post_ancestors($post->ID);
@@ -478,6 +482,8 @@ function the_breadcrumb()
             } else {
                 echo '<li>' . get_the_title() . '</li>';
             }
+            echo '<li>' . edit_post_link(__(' [ edit content ]')). '</li>';
+
         } elseif (is_home()) {
             echo '<li>News &amp; Announcements</li>';
         }
@@ -890,3 +896,85 @@ function wrdsb_change_search_url() {
     }   
 }
 add_action( 'template_redirect', 'wrdsb_change_search_url' );
+
+// buh-bye admin bar on the front end
+add_filter('show_admin_bar', '__return_false');
+
+// uh-oh, but we do need the admin link to show up for people who can actually access the dashboard of a site
+
+function wrdsb_get_current_user_roles() {
+    if( is_user_logged_in() ) {
+        $user = wp_get_current_user();
+        $roles = ( array ) $user->roles;
+        //return $roles; // This returns an array
+        // Use this to return a single value
+        return $roles[0];
+    } else {
+        return false;
+    }
+}
+
+function wrdsb_show_dashboard_link() {
+    if( is_user_logged_in() ) {
+        $role = wrdsb_get_current_user_roles();
+        $roles_who_get_dashboard_access = array('administrator','editor','author','contributor');
+        if (in_array($role, $roles_who_get_dashboard_access)) {
+            $dashboard_link = '<a href="'.get_bloginfo('url').'/wp-admin/">dashboard</a> &bull;'; 
+        } else {
+            $dashboard_link = '';
+        }
+        return $dashboard_link;
+    }
+}
+
+function wrdsb_show_profile_link() {
+    if( is_user_logged_in() ) {
+        $settings_link = '<a href="'.get_edit_user_link().'">settings</a> &bull; '; 
+    } else {
+        $settings_link = '';
+    }
+    return $settings_link;
+}
+
+function wrdsb_show_logout_link() {
+    if( is_user_logged_in() ) {
+        $logout_link = '<a href="'.wp_logout_url().'">logout</a>'; 
+    } else {
+        $logout_link = '';
+    }
+    return $logout_link;    
+}
+
+// where do I belong in the big scheme of things?
+
+function winston_get_site_type()
+{
+    return get_option('winston_site_type');
+}
+function winston_get_business_unit()
+{
+    return get_option('winston_business_unit');
+}
+function winston_get_business_unit_label()
+{
+    return get_option('winston_business_unit_label');
+}
+    
+function winston_get_business_unit_url()
+{
+    return get_option('winston_business_unit_url');
+}
+
+function wrdsb_contextual_nav_bar() {
+    $site_type = winston_get_site_type();
+    $business_name = winston_get_business_unit_label();
+    $business_url = winston_get_business_unit_url();
+    $sites_with_parents = array('guide','workspace','exemplar');
+ 
+    if (in_array($site_type, $sites_with_parents)) {
+        $contextual_nav = '<div id="department-nav"><a href="'.$business_url.'">'.$business_name.'</a></div>';
+    } else {
+        $contextual_nav = '';
+    }
+    return $contextual_nav;
+}

@@ -19,7 +19,7 @@
       <title><?php wp_title('');?> (<?php bloginfo('name');?>)</title>
     <?php }?>
 
-    <link href="https://s3.amazonaws.com/wrdsb-ui-assets/1/master.css" rel="stylesheet" media="all">
+    <link href="https://wrdsb-ui-assets.s3.amazonaws.com/intranet/2/master.css" rel="stylesheet" media="all">
 
     <link href="https://s3.amazonaws.com/wrdsb-ui-assets/<?php echo $GLOBALS['wrdsbvars']['asset_version']; ?>/images/icon-60x60.png" rel="apple-touch-icon" />
     <link href="https://s3.amazonaws.com/wrdsb-ui-assets/<?php echo $GLOBALS['wrdsbvars']['asset_version']; ?>/images/icon-76x76.png" rel="apple-touch-icon" sizes="76x76" />
@@ -60,7 +60,7 @@
         .introjs-helperLayer {
             background-color: #555555;
         }
-    </style>
+      </style>
 
     <?php wp_head();?>
 
@@ -78,14 +78,32 @@
 
 <body id="top">
 
+<div id="site-wide-navigation">
+<!-- persistent global navigation -->
+
+<div id="persistent-nav">
+    <div class="mainlinks"><a style="background-image: url(https://wrdsb-ui-assets.s3.amazonaws.com/1/1.0.3/images/wrdsb_people_icon.svg); background-repeat: no-repeat; padding-left: 25px" href="/">main</a> | <a href="/sites/departments/">departments</a> | <a href="/sites/guides/">guides</a> | <a href="/sites/workspaces/">workspaces</a> | <a href="/sites/school-handbooks/">school handbooks</a></div>
+    <div class="adminlinks">
+        <?php 
+            echo wrdsb_show_dashboard_link(); 
+            echo wrdsb_show_profile_link(); 
+            echo wrdsb_show_logout_link(); 
+        ?>
+    </div>
+</div>
+
+<!-- contextual navigation -->
+
+<?php echo wrdsb_contextual_nav_bar(); ?>
+
+</div>
 <!-- header -->
 <div class="container container-top">
 
     <div class="header">
         <div class="row">
             <div class="col-md-9 col-sm-8">
-                <div id="logo" role="heading">
-                    <a aria-labelledby="logo" href="<?php echo home_url(); ?>/"><span><?php echo get_bloginfo('name'); ?></span>
+                <div id="site_details" role="heading">
                         <p id="sitename"><?php echo get_bloginfo('name'); ?></p>
                         <?php if (get_bloginfo('description') != '') {?>
                             <p id="sitedescription"><?php echo get_bloginfo('description'); ?></p>
@@ -95,8 +113,6 @@
             </div>
             <div class="col-md-3 col-sm-4">
                 <div class="staff-shortcuts" role="complementary" aria-labelledby="staff-shortcut-list">
-                    <div id="staff-shortcut-list">
-                    </div>
                     <div class="searchbox" role="search" aria-labelledby="search">
                         <form action="<?php echo home_url(); ?>/" method="get">
                             <input aria-label="Search" type="text" name="s" id="search" value="<?php the_search_query();?>" placeholder="Search" />
@@ -108,8 +124,8 @@
     </div> <!-- /.header -->
 
     <div class="navbar my-navbar" role="navigation" aria-labelledby="navbar-header">
-        <div id="navbar-header">
-            <button type="button" class="navbar-toggle togglesearch" data-toggle="collapse" data-target=".navbar-search">
+      <div id="navbar-header">
+ <?php /*           <button type="button" class="navbar-toggle togglesearch" data-toggle="collapse" data-target=".navbar-search">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-search"></span>
             </button>
@@ -134,12 +150,12 @@
                 }
             ?>
             <a class="navbar-brand" href="<?php echo home_url(); ?>/"><?php echo $newstrl; ?></a>
-        </div>
+       </div>
 
-        <div class="collapse navbar-search" role="search" aria-labelledby="mobileSearch">
+       <div class="collapse navbar-search" role="search" aria-labelledby="mobileSearch">
             <form action="<?php echo home_url(); ?>/" method="get">
                 <input aria-label="Search" type="text" name="s" id="mobileSearch" value="<?php the_search_query();?>" placeholder="Search" />
-            </form>
+            </form> */ ?>
         </div>
 
         <div id="menu" role="navigation" aria_label="Menu">
