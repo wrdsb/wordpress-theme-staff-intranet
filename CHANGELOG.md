@@ -1,3 +1,9 @@
+## 2.1.0
++ Persistent navigation bar
++ Site contextual navigation bar
++ move edit link to breadcrumbs
++ change references to style sheets for fork of theme ui components
+
 ## 2.0.0
 + Staff Intranet Fork
 

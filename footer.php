@@ -52,7 +52,7 @@
                 <p><a id="footer-link-web-attendance" style="color:white" target="_blank" href="https://etrillium.wrdsb.ca/twebschool/TWEBATT/ptEntry.action?moduleId=TWEBATT">Trillium Web Attendance</a></p>
                 <p><a id="footer-link-twea" style="color:white" target="_blank" href="https://etrillium.wrdsb.ca/trillium/">TWEA</a></p>
                 <p><a id="footer-link-s4s" style="color:white" target="_blank" href="https://s4s.wrdsb.ca/">Support 4 Students (S4S)</a></p>
-                <p><a id="footer-link-compass" style="color:white" target="_blank" href="https://compass.wrdsb.ca/portal/">enCompass Portal (Compass for Success)</a></p>
+                <p><a id="footer-link-compass" style="color:white" target="_blank" href="https://compass.wrdsb.ca/portal/">Compass for Success (enCompass)</a></p>
                 <p><a id="footer-link-esl-tracker" style="color:white" target="_blank" href="https://etrillium.wrdsb.ca/twebboard/TWEBESL">ESL Tracker</a></p>
             </div>
 
@@ -72,7 +72,7 @@
                 <p><a id="footer-link-staff-directory" style="color:white" href="/directory/">Staff Directory</a></p>
                 <p><a id="footer-link-calendars" style="color:white" href="/calendar/">Calendars</a></p>
                 <p><a id="footer-link-ess" style="color:white" target="_blank" href="https://ess.wrdsb.ca">Employee Self-Service Portal</a></p>
-                <p><a id="footer-link-mental-health" style="color:white" target="_blank" href="/mentalhealth/">Mental Health</a></p>
+                <p><a id="footer-link-mental-health" style="color:white" target="_blank" href="/mental-health/">Mental Health</a></p>
                 <p><a id="footer-link-online-tools-more" style="color:white" href="/online-tools/">More...</a></p>
             </div>
 
