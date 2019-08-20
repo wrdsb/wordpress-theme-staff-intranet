@@ -25,7 +25,7 @@
  * @since WRDSB 1.0
  */
 
-if (!function_exists('wrdsb_setup')):
+if (!function_exists('wrdsb_setup')) :
 /**
  * WRDSB setup.
  *
@@ -38,7 +38,7 @@ if (!function_exists('wrdsb_setup')):
  * @since WRDSB 1.0
  */
     function wrdsb_setup()
-{
+    {
 
         /*
          * Make WRDSB available for translation.
@@ -78,7 +78,7 @@ if (!function_exists('wrdsb_setup')):
             $wp_customize->remove_section('custom_css');
             $wp_customize->remove_control('site_icon');
         }
-// Remove Customizer Additional CSS
+        // Remove Customizer Additional CSS
         add_action('customize_register', 'wrdsb_edit_customizer', 20);
 
         // Add ID and CLASS attributes to the first <ul> occurence in wp_page_menu
@@ -104,7 +104,8 @@ if (!function_exists('wrdsb_setup')):
                     return $ancestors[0];
                 }
                 return $post->ID;
-            }}
+            }
+        }
 
         /*
          * Switch default core markup for search form, comment form, and comments
@@ -413,7 +414,6 @@ require get_template_directory() . '/inc/customizer.php';
 //}
 
 /* Custom Global Variables */
-
 if (!function_exists('wrdsb_global_vars')) {
     function wrdsb_global_vars()
     {
@@ -424,11 +424,62 @@ if (!function_exists('wrdsb_global_vars')) {
     add_action('parse_query', 'wrdsb_global_vars');
 }
 
-/* Breadcrumb Links */
-
-function the_breadcrumb()
+/* Content visibility check, based on site privacy */
+function current_user_can_view_content()
 {
-    if (is_singular('sfwd-lessons') or is_singular('sfwd-quiz')) {return;}
+    $privacy_option = get_option('blog_public');
+
+    switch ($privacy_option) {
+        case '-2':
+            if (! is_user_logged_in()) {
+                return false;
+            } else {
+                if (! current_user_can('read')) {
+                    return false;
+                }
+            }
+            break;
+        case '-3':
+            if (! is_user_logged_in()) {
+                return false;
+            } else {
+                if (! current_user_can('manage_options')) {
+                    return false;
+                }
+            }
+            break;
+        default:
+            if (! is_user_logged_in()) {
+                return false;
+            }
+            break;
+    }
+    return true;
+}
+
+/**
+ * Set the URL to redirect to on login.
+ *
+ * @return string URL to redirect to on login. Must be absolute.
+ */
+function wrdsb_forcelogin_redirect()
+{
+    return home_url('/');
+}
+add_filter('v_forcelogin_redirect', 'wrdsb_forcelogin_redirect');
+
+function wrdsb_forcelogin_hide_backtoblog()
+{
+    echo '<style type="text/css">#backtoblog{display:none;}</style>';
+}
+add_action('login_enqueue_scripts', 'wrdsb_forcelogin_hide_backtoblog');
+
+/* Breadcrumb Links */
+function get_breadcrumbs()
+{
+    if (is_singular('sfwd-lessons') or is_singular('sfwd-quiz')) {
+        return;
+    }
     global $post;
     echo '<div class="container container-breadcrumb" role="navigation">';
     echo '<ol class="breadcrumb">';
@@ -487,25 +538,34 @@ function the_breadcrumb()
         } elseif (is_home()) {
             echo '<li>News &amp; Announcements</li>';
         }
-    } elseif (is_tag()) {single_tag_title();} elseif (is_category()) {
+    } elseif (is_tag()) {
+        single_tag_title();
+    } elseif (is_category()) {
         echo "<li>";
         the_category();
-        echo '</li>';} elseif (is_day()) {
+        echo '</li>';
+    } elseif (is_day()) {
         echo "<li>Archive for ";
         the_time('F jS, Y');
-        echo '</li>';} elseif (is_month()) {
+        echo '</li>';
+    } elseif (is_month()) {
         echo "<li>Archive for ";
         the_time('F, Y');
-        echo '</li>';} elseif (is_year()) {
+        echo '</li>';
+    } elseif (is_year()) {
         echo "<li>Archive for ";
         the_time('Y');
-        echo '</li>';} elseif (is_author()) {
+        echo '</li>';
+    } elseif (is_author()) {
         echo "<li>Author Archive";
-        echo '</li>';} elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
+        echo '</li>';
+    } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
         echo "<li>Blog Archives";
-        echo '</li>';} elseif (is_search()) {
+        echo '</li>';
+    } elseif (is_search()) {
         echo "<li>Search Results";
-        echo '</li>';}
+        echo '</li>';
+    }
     echo '</ol>';
     echo '</div>';
 }
@@ -554,6 +614,16 @@ function wrdsb_i_am_a_staff_site()
     );
     if (in_array(($host[0]), $my_domains)) {
         return true;
+    }
+}
+
+function wrdsb_i_am_a_sub_site()
+{
+    $blog_id = get_current_blog_id();
+    if ($blog_id != 1) {
+        return true;
+    } else {
+        return false;
     }
 }
 
@@ -865,7 +935,6 @@ function wrdsb_i_am_a_school_with_kindergarten()
     }
 }
 
-add_filter('upload_mimes', 'custom_upload_mimes');
 function custom_upload_mimes($existing_mimes = array())
 {
     // add your extension to the array
@@ -879,6 +948,7 @@ function custom_upload_mimes($existing_mimes = array())
     // and return the new full result
     return $existing_mimes;
 }
+add_filter('upload_mimes', 'custom_upload_mimes');
 
 // Favicon
 if (!function_exists('favicon_link')) {
@@ -889,13 +959,40 @@ if (!function_exists('favicon_link')) {
     add_action('wp_head', 'favicon_link');
 }
 
-function wrdsb_change_search_url() {
-    if ( is_search() && ! empty( $_GET['s'] ) ) {
-        wp_redirect( "/search/content/?wp-posts-search=" . urlencode( get_query_var( 's' ) ) );
+function wrdsb_change_search_url()
+{
+    if (is_search() && ! empty($_GET['s'])) {
+        $search_url = "/search/content/?wp-posts-search=";
+        $search_url .= urlencode(get_query_var('s'));
+        if (wrdsb_i_am_a_sub_site()) {
+            $search_url .= '&search-filter-site-name=';
+            $search_url .= urlencode(get_bloginfo('name'));
+        }
+        wp_redirect($search_url);
         exit();
-    }   
+    }
 }
-add_action( 'template_redirect', 'wrdsb_change_search_url' );
+add_action('template_redirect', 'wrdsb_change_search_url');
+
+function winston_get_site_type()
+{
+    return get_option('winston_site_type');
+}
+
+function winston_get_business_unit()
+{
+    return get_option('winston_business_unit');
+}
+
+function winston_get_business_unit_label()
+{
+    return get_option('winston_business_unit_label');
+}
+    
+function winston_get_business_unit_url()
+{
+    return get_option('winston_business_unit_url');
+}
 
 // buh-bye admin bar on the front end
 add_filter('show_admin_bar', '__return_false');
