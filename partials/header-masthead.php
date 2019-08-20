@@ -1,8 +1,7 @@
 <div class="header">
     <div class="row">
         <div class="col-md-9 col-sm-8">
-            <div id="logo" role="heading">
-                <a aria-labelledby="logo" href="<?php echo home_url(); ?>/"><span><?php echo get_bloginfo('name'); ?></span>
+            <div id="site_details" role="heading">
                     <p id="sitename"><?php echo get_bloginfo('name'); ?></p>
                     <?php if (get_bloginfo('description') != '') {?>
                         <p id="sitedescription"><?php echo get_bloginfo('description'); ?></p>

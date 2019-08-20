@@ -19,7 +19,7 @@
       <title><?php wp_title('');?> (<?php bloginfo('name');?>)</title>
     <?php }?>
 
-    <link href="https://s3.amazonaws.com/wrdsb-ui-assets/1/master.css" rel="stylesheet" media="all">
+    <link href="https://s3.amazonaws.com/wrdsb-ui-assets/intranet/master.css" rel="stylesheet" media="all">
 
     <link href="https://s3.amazonaws.com/wrdsb-ui-assets/<?php echo $GLOBALS['wrdsbvars']['asset_version']; ?>/images/icon-60x60.png" rel="apple-touch-icon" />
     <link href="https://s3.amazonaws.com/wrdsb-ui-assets/<?php echo $GLOBALS['wrdsbvars']['asset_version']; ?>/images/icon-76x76.png" rel="apple-touch-icon" sizes="76x76" />
@@ -76,3 +76,24 @@
     </script>
 </head>
 <body id="top">
+
+<div id="site-wide-navigation">
+
+    <!-- persistent global navigation -->
+    
+    <div id="persistent-nav">
+        <div class="mainlinks"><a style="background-image: url(https://wrdsb-ui-assets.s3.amazonaws.com/1/1.0.3/images/wrdsb_people_icon.svg); background-repeat: no-repeat; padding-left: 25px" href="/">main</a> | <a href="/sites/departments/">departments</a> | <a href="/sites/guides/">guides</a> | <a href="/sites/workspaces/">workspaces</a> | <a href="/sites/school-handbooks/">school handbooks</a></div>
+        <div class="adminlinks">
+            <?php 
+                echo wrdsb_show_dashboard_link(); 
+                echo wrdsb_show_profile_link(); 
+                echo wrdsb_show_logout_link(); 
+            ?>
+        </div>
+    </div>
+
+    <!-- contextual navigation -->
+
+    <?php echo wrdsb_contextual_nav_bar(); ?>
+
+</div>

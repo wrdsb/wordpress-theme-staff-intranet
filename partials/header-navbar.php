@@ -1,6 +1,6 @@
 <div class="navbar my-navbar" role="navigation" aria-labelledby="navbar-header">
     <div id="navbar-header">
-        <button type="button" class="navbar-toggle togglesearch" data-toggle="collapse" data-target=".navbar-search">
+        <?php /*<button type="button" class="navbar-toggle togglesearch" data-toggle="collapse" data-target=".navbar-search">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-search"></span>
         </button>
@@ -18,7 +18,7 @@
     <div class="collapse navbar-search" role="search" aria-labelledby="mobileSearch">
         <form action="<?php echo home_url(); ?>/" method="get">
             <input aria-label="Search" type="text" name="s" id="mobileSearch" value="<?php the_search_query(); ?>" placeholder="Search" />
-        </form>
+        </form> */?>
     </div>
 
     <div id="menu" role="navigation" aria_label="Menu">

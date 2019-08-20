@@ -1074,4 +1074,3 @@ function wrdsb_contextual_nav_bar() {
         $contextual_nav = '';
     }
     return $contextual_nav;
-}
