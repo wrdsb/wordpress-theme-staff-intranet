@@ -39,6 +39,7 @@ if (!function_exists('wrdsb_setup')) :
  */
     function wrdsb_setup()
     {
+        add_theme_support('title-tag');
 
         /*
          * Make WRDSB available for translation.
@@ -51,7 +52,7 @@ if (!function_exists('wrdsb_setup')) :
         load_theme_textdomain('wrdsb', get_template_directory() . '/languages');
 
         // Add RSS feed links to <head> for posts and comments.
-        add_theme_support('automatic-feed-links');
+        //add_theme_support('automatic-feed-links');
 
         // Enable support for Featured Images (Post Thumbnails) in pages and posts, and declare sizes.
         add_theme_support('post-thumbnails');
@@ -134,6 +135,12 @@ if (!function_exists('wrdsb_setup')) :
     }
 endif; // wrdsb_setup
 add_action('after_setup_theme', 'wrdsb_setup');
+
+function wrdsbStaffTitleSep($sep)
+{
+    return '|';
+}
+add_filter('document_title_separator', 'wrdsbStaffTitleSep', 10, 2);
 
 /**
  * Adjust content_width value for image attachment template.
@@ -583,6 +590,21 @@ function new_excerpt_more($more)
     return ' [...]<p class="readmore" role="complementary"><a href="' . get_permalink($post->ID) . '"><strong>Read more about</strong> <cite>' . get_the_title($post->ID) . '</cite> &#187;</a></p>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+
+function get_our_excerpt($our_post_id, $global_post_id)
+{
+    global $post;
+    $our_excerpt = get_the_excerpt($our_post_id);
+
+    if (strpos($our_excerpt, 'Read more about') !== false) {
+        $our_excerpt = str_replace(get_permalink($global_post_id), get_permalink($our_post_id), $our_excerpt);
+        $our_excerpt = str_replace(get_the_title($global_post_id), get_the_title($our_post_id), $our_excerpt);
+    } else {
+        $our_excerpt = $our_excerpt . '<p class="readmore" role="complementary"><a href="' . get_permalink($our_post_id) . '"><strong>Read more about</strong> <cite>' . get_the_title($our_post_id) . '</cite> &#187;</a></p>';
+    }
+
+    return $our_excerpt;
+}
 
 function wrdsb_posts_page_url()
 {
