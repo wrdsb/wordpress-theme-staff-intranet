@@ -19,9 +19,7 @@ switch ($privacy_option) {
 }
 ?>
 
-<h1></h1>
-
-<img src="<?php echo get_theme_file_uri('assets/images/401.jpg'); ?>" width="200px" style="float:left; margin-right:30px">
+<img src="https://staff.wrdsb.ca/wp-content/uploads/2019/08/Alert.png" width="200px" style="float:left; margin-right:30px">
 
 <div style="margin-top:30px;">
     <p>
@@ -47,7 +45,7 @@ switch ($privacy_option) {
         <?php echo $authorized_role; ?> for the 
         <?php echo get_bloginfo('name'); ?>,
         please 
-        <a href="https://itservicedesk.wrdsb.ca/ITServiceDesk.WebAccess/wd/object/create.rails?class_name=RequestManagement.Request&lifecycle_name=NewProcess33&object_template_name=NewTemplate101">log an IT Service Desk ticket</a>
+        <a href="https://itservicedesk.wrdsb.ca/ITServiceDesk.WebAccess/wd/object/create.rails?class_name=RequestManagement.Request&lifecycle_name=NewProcess33&object_template_name=NewTemplate101">log an ITService Desk ticket</a>
         requesting access to the <?php echo get_bloginfo('name'); ?>
         section of the Staff Intranet.
     </p>

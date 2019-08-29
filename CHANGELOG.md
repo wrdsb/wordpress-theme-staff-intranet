@@ -1,3 +1,6 @@
+## 2.1.1
++ update to content-unauthorized.php image and text
+
 ## 2.1.0
 + Persistent navigation bar
 + Site contextual navigation bar
