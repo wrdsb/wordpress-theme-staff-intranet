@@ -53,6 +53,7 @@
                 <p><a id="footer-link-twea" style="color:white" target="_blank" href="https://etrillium.wrdsb.ca/trillium/">TWEA</a></p>
                 <p><a id="footer-link-s4s" style="color:white" target="_blank" href="https://s4s.wrdsb.ca/">Support 4 Students (S4S)</a></p>
                 <p><a id="footer-link-compass" style="color:white" target="_blank" href="https://compass.wrdsb.ca/portal/">Compass for Success (enCompass)</a></p>
+                <p><a id="footer-link-d2l" style="color:white" target="_blank" href="http://wrdsb.elearningontario.ca/">Virtual Learning Environment (VLE/D2L)</a></p>
                 <p><a id="footer-link-esl-tracker" style="color:white" target="_blank" href="https://etrillium.wrdsb.ca/twebboard/TWEBESL">ESL Tracker</a></p>
             </div>
 
