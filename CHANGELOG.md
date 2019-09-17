@@ -1,3 +1,6 @@
+## 2.2.0
++ masthead 2019
+
 ## 2.1.1
 + update to content-unauthorized.php image and text
 

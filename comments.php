@@ -22,6 +22,8 @@ endif;
 if ( post_password_required() )
     return;
 ?>
+
+<!-- comments.php -->
  
 <div id="comments" class="comments-area">
  

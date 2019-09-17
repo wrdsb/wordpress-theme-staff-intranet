@@ -1017,7 +1017,7 @@ function wrdsb_show_dashboard_link() {
     if( is_user_logged_in() ) {
         $role = wrdsb_get_current_user_roles();
         $roles_who_get_dashboard_access = array('administrator','editor','author','contributor');
-        if (in_array($role, $roles_who_get_dashboard_access)) {
+        if (in_array($role, $roles_who_get_dashboard_access) OR is_super_admin()) {
             $dashboard_link = '<a href="'.get_bloginfo('url').'/wp-admin/">dashboard</a> &bull;'; 
         } else {
             $dashboard_link = '';

@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 
-<div class="container container-top">
+<!-- archive.php -->
+
+<div class="container-top">
     <?php get_template_part('partials/header', 'masthead'); ?>
 
     <?php if (! current_user_can_view_content()) {

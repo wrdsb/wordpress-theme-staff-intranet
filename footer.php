@@ -8,6 +8,9 @@
  * @subpackage WRDSB
  */
 ?>
+
+<!-- footer.php -->
+
 <div id="footer" class="footer" role="contentinfo">
     <div id="fat-footer-container" class="container">
 

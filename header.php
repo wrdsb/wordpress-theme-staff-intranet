@@ -69,8 +69,152 @@
         ga('require', 'linkid');
         ga('send', 'pageview');
     </script>
+
+
+<style type="text/css">
+/** add to ui-intranet **/
+
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Open+Sans+Condensed:300&display=swap');
+
+#masthead {
+  background-color: #62bb46;
+}
+
+#navbar { 
+  background-color: #39607a; 
+}
+
+#masthead .row {
+  margin: 0;
+}
+
+.my-navbar {
+  background-color:#39607a;
+  border-radius:0;
+  border-top:0;
+  border-left:0;
+  border-right:0;
+  border-bottom:0;
+  margin-bottom:10px;
+}
+.my-sub-navbar {
+  background-color:#fff;
+  border-radius:0px;
+  border-left:0px;
+  border-right:0px;
+  border-bottom:0px;
+  margin-bottom:0px;
+/*  min-height:1px; */
+}
+.my-sub-navbar .navbar-brand {
+  float:none;
+}
+.nav-justified > li > a {
+  line-height:28px;
+  color:#fff;
+  font-weight:bold;
+  font-size:16px;
+}
+.nav >li > a:hover, .nav >li > a:focus {
+  background-color:#3881b2;
+}
+.nav >li.active,
+.nav >li.current-page-ancestor,
+.nav >li.current_page_ancestor,
+.nav >li.current-menu-item,
+.nav >li.current_page_item {
+  background-color:#3881b2;
+}
+
+.nav_current_page_children_container {
+  background-color:#e6eff6;
+  padding-bottom: 5px;
+}
+
+  #sitename {
+    font-size: 40px !important;
+    font-family: 'Open Sans Condensed', serif !important;
+    font-weight:bold;
+    color: #fff;
+  }
+
+#sitename span {
+    color: #005fae;
+}
+
+  #sitedescription {
+    font-size: 22px;
+    letter-spacing: 0;
+    font-family: "Nanum Gothic", sans-serif;
+    color: #fff;
+  }
+
+#staff-shortcut-list a {
+  color: #fff;
+  background-image: url(https://wrdsb-ui-assets.s3.amazonaws.com/1/1.1.0/images/Pointer.svg);
+  background-repeat: no-repeat;
+  padding-left: 20px;
+  margin-left: -1px;
+  font-size: 16px;
+}
+
+h1 {
+  font-family: 'Open Sans Condensed', sans-serif !important;
+  font-weight: bold;
+  font-size: 40px;
+  color: #62bb46;
+}
+
+h2 {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 22px;
+  color: #005fae;
+}
+
+p, li, td {
+  font-size: 16px;
+  line-height: 150%;
+}
+
+p.fineprint, p.categories, p.tags, p.postdate {
+  font-size: 13px;
+}
+
+.staff-shortcuts {
+  margin-top:40px;
+  position: inherit;
+}
+
+.staff-shortcuts a {
+  margin:0 8px;
+}
+.searchbox {
+  /*float:left;*/
+  /*width:100%;*/
+  margin-top:8px;
+  float: none;
+}
+.searchbox input {
+  /*width:170px;
+  float:left;*/
+  width: 266px;
+  color:#666;
+  padding: 2px 4px;
+  margin:0 0 15px 0;
+  float: none;
+}
+.staff-shortcuts .icon-search {
+  /*display:inline-block;
+  position:relative; */
+  left:-22px;
+  top:6px;
+}
+
+</style>
 </head>
 <body id="top">
+
+<!-- header.php -->
 
 <div id="site-wide-navigation">
 

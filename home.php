@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 
-<div class="container container-top">
+<!-- home.php -->
+
+<div class="container-top">
     <?php get_template_part('partials/header', 'masthead'); ?>
 
     <?php if (! current_user_can_view_content()) {
@@ -68,7 +70,7 @@
                 echo '<div class="col-sm-12 col-lg-12" role="main">';
             } ?>
 
-            <h1>News &amp; Announcements</h1>
+            <h1>News &amp;<br />Announcements</h1>
 
             <?php
             // Start the Loop.
