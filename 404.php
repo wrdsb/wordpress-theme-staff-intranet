@@ -21,6 +21,11 @@
 <?php if (current_user_can_view_content()) { ?>
     <div class="container">
         <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12" role="complementary">
+                <h1><?php echo get_the_title($post->ID);?></h1>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-sm-12 col-lg-12">
                 <h1>404 Page Not Found</h1>
                 <p>The information you were looking for may have been moved, deleted or doesn't exist.</p>

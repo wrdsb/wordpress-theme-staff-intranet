@@ -1,5 +1,8 @@
 ## 2.2.0
-+ masthead 2019
++ new masthead code
++ fixed search for mobile
++ updated link to ui assets
++ h1 on own visual line (sidebars lowered)
 
 ## 2.1.1
 + update to content-unauthorized.php image and text

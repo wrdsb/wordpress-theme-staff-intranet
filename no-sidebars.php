@@ -25,6 +25,11 @@ Template Name: No Sidebars
 
 <?php if (current_user_can_view_content()) { ?>
     <div class="container">
+            <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12" role="complementary">
+            <h1><?php echo get_the_title($post->ID);?></h1>
+        </div>
+    </div>
         <div class="row">
             <div class="col-sm-12">
                 <?php // check if the post has a Post Thumbnail assigned to it.

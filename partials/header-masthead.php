@@ -18,7 +18,7 @@
                             </form>
                         </div>
                         <div id="staff-shortcut-list">
-                            [Google links]
+                            <a href="https://gmail.google.com/" target="_blank" rel="noopener"><img src="https://wrdsb-ui-assets.s3.amazonaws.com/1/1.1.0/images/gmail.svg" /></a><a href="https://drive.google.com/" target="_blank" rel="noopener"><img src="https://wrdsb-ui-assets.s3.amazonaws.com/1/1.1.0/images/drive.svg" /></a><a href="https://calendar.google.com/" target="_blank" rel="noopener"><img src="https://wrdsb-ui-assets.s3.amazonaws.com/1/1.1.0/images/calendar.svg" /></a>
                         </div>
                     </div>
                 </div>

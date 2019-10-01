@@ -20,7 +20,12 @@
 
 <?php if (current_user_can_view_content()) { ?>
     <div class="container">
-        <div class="row">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12" role="complementary">
+            <h1><?php echo get_the_title($post->ID);?></h1>
+        </div>
+    </div>
+            <div class="row">
             <?php
             $has_left = false;
             $has_right = false;
@@ -86,7 +91,7 @@
             <?php if (have_posts()) {
                 while (have_posts()) {
                     the_post(); ?>
-                    <h1><?php the_title(); ?></h1>
+                    <!--<h1><?php the_title(); ?></h1> -->
                     <p class="postdate"> <?php the_time('F jS') ?>, <?php the_time('Y') ?></p>
                     <p><?php the_content(__('Read more'));?></p>
 
