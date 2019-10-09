@@ -1,3 +1,8 @@
+## 2.2.0
++ new masthead code
++ updated link to ui assets
++ h1 on own visual line (sidebars lowered)
+
 ## 2.1.1
 + update to content-unauthorized.php image and text
 

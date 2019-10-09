@@ -28,7 +28,7 @@ if (is_single()) {
     if (has_post_thumbnail()) {
         // link Post Thumbnail to Post
         // $post is from functions.php
-        echo '<a href="'. get_permalink($post->ID) .'">'. the_post_thumbnail('wrdsb-full-width') .'</a>';
+        echo '<div class="featuredimage" role="presentation"><a href="'. get_permalink($post->ID) .'">'. the_post_thumbnail('wrdsb-full-width','alt') .'</a></div>';
     }
 }
 
