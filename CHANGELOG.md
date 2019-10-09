@@ -1,6 +1,5 @@
 ## 2.2.0
 + new masthead code
-+ fixed search for mobile
 + updated link to ui assets
 + h1 on own visual line (sidebars lowered)
 

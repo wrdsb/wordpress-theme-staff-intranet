@@ -1077,3 +1077,17 @@ function wrdsb_contextual_nav_bar() {
     }
     return $contextual_nav;
 }
+
+function wrdsb_contextual_nav_mobile() {
+    $site_type = winston_get_site_type();
+    $business_name = winston_get_business_unit_label();
+    $business_url = winston_get_business_unit_url();
+    $sites_with_parents = array('guide','workspace','exemplar');
+ 
+    if (in_array($site_type, $sites_with_parents)) {
+        $contextual_nav_mobile = '<li>Owned by: <a href="'.$business_url.'">'.$business_name.'</a></li>';
+    } else {
+        $contextual_nav_mobile = '';
+    }
+    return $contextual_nav_mobile;
+}

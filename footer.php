@@ -8,7 +8,9 @@
  * @subpackage WRDSB
  */
 ?>
-
+<div id="print_warning" class="printonly">
+    <p>This information expires once printed. Please always refer to the online version for the most current information.</p>
+</div>
 <!-- footer.php -->
 
 <div id="footer" class="footer" role="contentinfo">
