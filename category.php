@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 
-<div class="container container-top">
+<!-- category.php -->
+
+<div class="container-top">
     <?php get_template_part('partials/header', 'masthead'); ?>
 
     <?php if (! current_user_can_view_content()) {
@@ -18,6 +20,17 @@
 
 <?php if (current_user_can_view_content()) { ?>
     <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12" role="complementary">
+            <?php if ($paged < 2) { ?>
+                <h1><?php single_cat_title('Category: '); ?></h1>
+                <div id="category-description">
+                    <?php echo category_description(); ?> 
+                </div>
+            <?php } else { ?>
+                <h1><?php single_cat_title('Category: '); ?></h1>
+            <?php } ?>            </div>
+        </div>
         <div class="row">
 
             <?php $has_left = false; ?>
@@ -69,14 +82,7 @@
                 echo '<div class="col-sm-12 col-lg-12">';
             } ?>
 
-            <?php if ($paged < 2) { ?>
-                <h1><?php single_cat_title('Category: '); ?></h1>
-                <div id="category-description">
-                    <?php echo category_description(); ?> 
-                </div>
-            <?php } else { ?>
-                <h1><?php single_cat_title('Category: '); ?></h1>
-            <?php } ?>
+
 
             <?php
             // Start the Loop.

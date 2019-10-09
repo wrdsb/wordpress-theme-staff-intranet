@@ -14,7 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="https://s3.amazonaws.com/wrdsb-ui-assets/intranet/master.css" rel="stylesheet" media="all">
+    <link href="https://s3.amazonaws.com/wrdsb-ui-assets/intranet/master_test.css" rel="stylesheet">
 
     <link href="https://s3.amazonaws.com/wrdsb-ui-assets/<?php echo $GLOBALS['wrdsbvars']['asset_version']; ?>/images/icon-60x60.png" rel="apple-touch-icon" />
     <link href="https://s3.amazonaws.com/wrdsb-ui-assets/<?php echo $GLOBALS['wrdsbvars']['asset_version']; ?>/images/icon-76x76.png" rel="apple-touch-icon" sizes="76x76" />
@@ -77,7 +77,13 @@
     <!-- persistent global navigation -->
     
     <div id="persistent-nav">
-        <div class="mainlinks"><a style="background-image: url(https://wrdsb-ui-assets.s3.amazonaws.com/1/1.0.3/images/wrdsb_people_icon.svg); background-repeat: no-repeat; padding-left: 25px" href="/">main</a> | <a href="/sites/departments/">departments</a> | <a href="/sites/guides/">guides</a> | <a href="/sites/workspaces/">workspaces</a> | <a href="/sites/school-handbooks/">school handbooks</a></div>
+        <ul class="mainlinks">
+            <li><a href="/">main</a></li>
+            <li><a href="/sites/departments/">departments</a></li>
+            <li><a href="/sites/guides/">guides</a></li>
+            <li><a href="/sites/workspaces/">workspaces</a></li>
+            <li><a href="/sites/school-handbooks/">school handbooks</a></li>
+        </ul>
         <div class="adminlinks">
             <?php 
                 echo wrdsb_show_dashboard_link(); 
@@ -92,3 +98,40 @@
     <?php echo wrdsb_contextual_nav_bar(); ?>
 
 </div>
+
+<?php /*
+
+<div id="site-wide-menu-toggle"><a class="btn btn-primary" data-toggle="collapse" href="#site-wide-mobile" aria-expanded="false" aria-controls="site-wide-mobile">menu</a></div>
+
+<div id="site-wide-mobile" class="collapse in">
+    <div class="well">
+
+    <ul class="mainlinks">
+        <li><a href="/">main</a></li>
+        <li><a href="/sites/departments/">departments</a></li>
+        <li><a href="/sites/guides/">guides</a></li>
+        <li><a href="/sites/workspaces/">workspaces</a></li>
+        <li><a href="/sites/school-handbooks/">school handbooks</a></li>
+        <?php /*echo wrdsb_contextual_nav_mobile(); ?>
+    </ul>
+    <ul class="adminlinks">
+    <?php 
+        echo wrdsb_show_dashboard_link(); 
+        echo wrdsb_show_profile_link(); 
+        echo wrdsb_show_logout_link(); 
+    ?>
+    </ul>
+    <ul id="staff-shortcuts-mobile">
+        <li><a href="https://gmail.google.com/" target="_blank" rel="noopener"><img src="https://wrdsb-ui-assets.s3.amazonaws.com/1/1.1.0/images/gmail.svg" /><span class="sr-only"> Email</span></a></li>
+        <li><a href="https://drive.google.com/" target="_blank" rel="noopener"><img src="https://wrdsb-ui-assets.s3.amazonaws.com/1/1.1.0/images/drive.svg" /><span class="sr-only"> Files</span></a></li>
+        <li><a href="https://calendar.google.com/" target="_blank" rel="noopener"><img src="https://wrdsb-ui-assets.s3.amazonaws.com/1/1.1.0/images/calendar.svg" /><span class="sr-only"> Calendar</span></a></li>
+    </ul>
+    <div class="searchbox-mobile" role="search" aria-labelledby="search">
+        <form action="<?php echo home_url(); ?>/" method="get">
+            <input aria-label="Search" type="text" name="s" id="search" value="<?php the_search_query();?>" placeholder="Search" />
+        </form>
+    </div>
+</div>
+</div>
+
+*/ ?>

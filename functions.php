@@ -425,7 +425,7 @@ if (!function_exists('wrdsb_global_vars')) {
     function wrdsb_global_vars()
     {
         global $wrdsbvars;
-        $wrdsbvars['asset_version'] = "intranet/2";
+        $wrdsbvars['asset_version'] = "intranet/2/2.2.0";
         // to use: $GLOBALS['wrdsbvars']['asset_version']
     }
     add_action('parse_query', 'wrdsb_global_vars');
@@ -1017,8 +1017,8 @@ function wrdsb_show_dashboard_link() {
     if( is_user_logged_in() ) {
         $role = wrdsb_get_current_user_roles();
         $roles_who_get_dashboard_access = array('administrator','editor','author','contributor');
-        if (in_array($role, $roles_who_get_dashboard_access)) {
-            $dashboard_link = '<a href="'.get_bloginfo('url').'/wp-admin/">dashboard</a> &bull;'; 
+        if (in_array($role, $roles_who_get_dashboard_access) OR is_super_admin()) {
+            $dashboard_link = '<li><a href="'.get_bloginfo('url').'/wp-admin/">dashboard</a></li>'; 
         } else {
             $dashboard_link = '';
         }
@@ -1028,7 +1028,7 @@ function wrdsb_show_dashboard_link() {
 
 function wrdsb_show_profile_link() {
     if( is_user_logged_in() ) {
-        $settings_link = '<a href="'.get_edit_user_link().'">settings</a> &bull; '; 
+        $settings_link = '<li><a href="'.get_edit_user_link().'">settings</a></li>'; 
     } else {
         $settings_link = '';
     }
@@ -1037,7 +1037,7 @@ function wrdsb_show_profile_link() {
 
 function wrdsb_show_logout_link() {
     if( is_user_logged_in() ) {
-        $logout_link = '<a href="'.wp_logout_url().'">logout</a>'; 
+        $logout_link = '<li><a href="'.wp_logout_url().'">logout</a></li>'; 
     } else {
         $logout_link = '';
     }
@@ -1076,4 +1076,18 @@ function wrdsb_contextual_nav_bar() {
         $contextual_nav = '';
     }
     return $contextual_nav;
+}
+
+function wrdsb_contextual_nav_mobile() {
+    $site_type = winston_get_site_type();
+    $business_name = winston_get_business_unit_label();
+    $business_url = winston_get_business_unit_url();
+    $sites_with_parents = array('guide','workspace','exemplar');
+ 
+    if (in_array($site_type, $sites_with_parents)) {
+        $contextual_nav_mobile = '<li>Owned by: <a href="'.$business_url.'">'.$business_name.'</a></li>';
+    } else {
+        $contextual_nav_mobile = '';
+    }
+    return $contextual_nav_mobile;
 }

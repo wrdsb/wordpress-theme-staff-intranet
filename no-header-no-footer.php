@@ -2,11 +2,13 @@
 /*
 Template Name: No Header/Footer
  */
-;?>
-<?php if (! current_user_can_view_content()) { ?>
-    <?php get_header(); ?>
 
-    <div class="container container-top">
+if (! current_user_can_view_content()) { 
+    get_header(); ?>
+
+<!-- no-header-no-footer.php -->
+
+    <div class="container-top">
         <?php get_template_part('partials/header', 'masthead'); ?>
         <?php get_template_part('partials/content', 'unauthorized'); ?>
     </div>

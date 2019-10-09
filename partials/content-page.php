@@ -3,7 +3,7 @@
  * The template used for displaying page content
  */
 ?>
-<?php the_title('<h1>', '</h1>'); ?>
+<?php //the_title('<h1>', '</h1>'); ?>
 
 <?php
 if ($post->post_content == '') {
@@ -15,7 +15,7 @@ if ($post->post_content == '') {
         'post_type' => 'page',
     ));
     
-    // TODO: Make this a DL
+    // no content, it's an index with excerpts
     if ($children) {
         foreach ($children as $child) {
             echo '<h2>'.$child->post_title.'</h2>';
