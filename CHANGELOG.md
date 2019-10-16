@@ -2,6 +2,8 @@
 + new masthead code
 + updated link to ui assets
 + h1 on own visual line (sidebars lowered)
++ added class to content.php to manage featured images
++ fixed print display and print warning handling
 
 ## 2.1.1
 + update to content-unauthorized.php image and text
