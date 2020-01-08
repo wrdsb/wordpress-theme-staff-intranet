@@ -1091,3 +1091,7 @@ function wrdsb_contextual_nav_mobile() {
     }
     return $contextual_nav_mobile;
 }
+
+/* Ninja Forms PDF Customizations */
+
+add_filter( 'ninja_forms_submission_pdf_fetch_date', '__return_true' );

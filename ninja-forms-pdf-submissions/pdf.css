@@ -1,0 +1,172 @@
+body, p, td, th, li {
+	font-size: 10pt;
+	font-family: Helvetica, Arial, sans-serif;
+	line-height: 130%;
+}
+
+body, html {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 16pt;
+    font-family: "Helvetica-Bold", Arial, sans-serif;
+    text-align: right;
+    line-height: 150%;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+h1 span {
+	font-size: 11pt;
+	font-weight: normal;
+}
+
+h2, h3, h4, h5, h6 {
+    font-size: 13pt;
+    line-height: 150%;
+}
+
+h2 {
+	margin-top: 1em;
+	text-transform: uppercase;
+}
+
+h2 span {
+	font-size: 11pt;
+	font-weight: normal;
+	text-transform: none;
+}
+
+table h2 {
+	margin-bottom: 2em;
+}
+
+table ul {
+	margin: 2em 1em;
+}
+
+.header {
+	text-align: center;
+	margin: 0 auto 5pt auto;
+	height: 100px;
+	border-bottom: 1pt solid #000;
+	padding-bottom: 2pt;
+}
+
+.checkbox {
+	list-style-type: none;
+}
+
+input {
+	vertical-align: middle;
+}
+
+.smalltext {
+	height: 15pt; 
+	border-bottom: 1px solid #000;
+}
+
+.bigtext {
+	height: 85pt; 
+	border: 1px solid #000;
+	padding: 15pt;
+}
+
+.hugetext {
+	height: 160pt; 
+	border: 1px solid #000;
+	padding: 15pt;	
+}
+
+.hugesttext {
+	height: 260pt; 
+	border: 1px solid #000;
+	padding: 15pt;	
+}
+
+.urgent {
+	padding: 10pt;
+	font-size: 13pt;
+	text-align: center;
+	border: 1px dotted #000;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+table, th, td {
+	border: none;
+	padding: .5em;
+	vertical-align: bottom;
+}
+
+th {
+	text-align: left;
+	padding-left: 1em;
+	padding-bottom: 0;
+	border-bottom: 1px solid #fff;
+}
+
+table.copies {
+	margin: 15pt auto;
+	border: 1px solid #000;
+	background-color: gray;
+	font-size: 8pt;
+	width: 95%;
+}
+
+table.copies th {
+	text-align: left;
+}
+
+table.info th, table.info td {
+	vertical-align: top;
+}
+
+table.chart, table.chart th, table.chart td {
+	border: 1px solid #000;
+}
+
+table.small, table.small th, table.small td {
+	padding: 3pt;
+	font-size: 9pt;
+}
+
+table.small th {
+	background-color: #ccc;
+}
+
+p.internaluse {
+	margin-top: 3em;
+	border: 1px solid #000;
+	background-color: #ddd;
+	padding: 5pt;
+	text-align: center;
+	width: 98%;
+	font-size: 8pt;
+}
+
+.internaluse input, td input {
+	margin-left: 10pt;
+}
+
+table.chart th {
+	text-align: center;
+}
+
+table.chart td {
+	height: 25pt;
+}
+
+td.signature-entry, p.signature-entry, span.signature-entry {
+	border-bottom: 1pt solid #000;
+}
+
+input[type=checkbox] {
+	padding-left: 1em;
+}
