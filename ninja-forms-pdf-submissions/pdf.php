@@ -519,10 +519,10 @@
 
 				<table>
 					<tr>
-						<th style="width: 25%;">Student</th>
-						<td style="width: 25%;" class="signature-entry"><?php echo $student_name; ?></td>
-						<th style="width: 25%;">Placement</th>
-						<td style="width: 25%;" class="signature-entry"><?php echo $org_name; ?></td>
+						<th style="width: 17%;">Student</th>
+						<td style="width: 33%;" class="signature-entry"><?php echo $student_name; ?></td>
+						<th style="width: 17%;">Placement</th>
+						<td style="width: 33%;" class="signature-entry"><?php echo $org_name; ?></td>
 					</tr>
 					<tr>
 						<th>Completed by</th>
@@ -532,25 +532,19 @@
 					</tr>
 				</table>
 
-				<h2>On the First Day</h2>
+				<h2>Start of the First Day</h2>
 
 				<ul class="checkbox">
 					<li><input type="checkbox"> Ensure supervisor has copies of all completed and signed forms</li>
+					<li><input type="checkbox"> Review PPLP expectations with assigned staff and ensure they understand the student's needs and necessary accommodations</li>
 					<li><input type="checkbox"> Ensure student knows where to store their personal belongings</li>
 					<li><input type="checkbox"> Ensure student knows location of washrooms</li>
 					<li><input type="checkbox"> Ensure student and supervisor know transportation arrangements and contact information</li>
-					<li><input type="checkbox"> Review daily routines with student (break times, lunch, etc.) and record them
-						<p class="smalltext"></p>
-					</li>
-					<li><input type="checkbox"> Review PPLP expectations with assigned staff and ensure they understand the student's needs and necessary accommodations</li>
-				</ul>
-
-				<h2>Introductions</h2>
-				<ul class="checkbox">
+					<li><input type="checkbox"> Review daily routines with student (e.g., break times, lunch, etc.) and record them____________________________________________________________________________________</li>
 					<li><input type="checkbox"> Introduce student to and record the name(s) of the placement supervisor(s)
 						<p class="smalltext"></p>
 					</li>
-					<li><input type="checkbox"> Introduce student to and list name of co-workers
+					<li><input type="checkbox"> Introduce student to and list names of co-workers
 						<p class="smalltext"></p>
 					</li>
 				</ul>
@@ -577,7 +571,7 @@
 					<li><input type="checkbox"> Required Personal Protective Equipement (PPE) and Proper Use / Disposal of PPE
 						<p class="smalltext"></p>
 					</li>
-					<li style="page-break-after: always;"><input type="checkbox"> Name of the placement's Health &amp; Safety Committee Representative (or Safety Representative)
+					<li><input type="checkbox"> Name of the placement's Health &amp; Safety Committee Representative (or Safety Representative)
 						<p class="smalltext"></p>
 					</li>
 					<li><input type="checkbox"> What to do and who to see if a student has a concern about safety
@@ -585,40 +579,64 @@
 					</li>
 				</ul>
 
-				<h2>Specific information needed to assist student with learning/completing work tasks</h2>
+				<h3>Specific information needed to assist student with learning/completing work tasks <span>(e.g., security codes, passwords, location of cleaning products, etc.)</span></h3>
 
-				<p class="hugetext"></p>
+				<p class="hugesttext"></p>
 
 				<h2>At End of Day</h2>
 
 				<ul class="checkbox">
-					<li><input type="checkbox"> Student says good-bye and thank you to appropriate supervisor (so supervisor knows when student leaves)</li>
+					<li><input type="checkbox"> Student says good-bye and thank you to appropriate supervisor and/or co-workers so staff know when student leaves</li>
+					<li><input type="checkbox"> Record student comments about first day<p class="smalltext"></p></li>
+					<li><input type="checkbox"> Record placement staff comments about first day<p class="smalltext"></p></li>
+					<li><input type="checkbox"> Record school staff comments about first day<p class="smalltext"></p></li>
 				</ul>
 
-				<h2>Student comments, questions, concerns</h2>
-
-				<p class="bigtext"></p>
-
-				<h2>Overall comments</h2>
-
-				<p class="bigtext"></p>
+				<h2>Next Steps</h2>
 
 				<table>
 					<tr>
-						<th style="width: 15%;"><?php echo $student_name_letter_start; ?> Signature</th>
-						<td style="width: 15%;" class="signature-entry"></td>
-						<th style="width: 15%;"><?php echo $guardian_name_letter_start; ?> Signature</th>
-						<td style="width: 15%;" class="signature-entry"></td>
-						<th style="width: 15%;"><?php echo $org_direct_supervisor_signature; ?> Signature</th>
-						<td style="width: 15%;" class="signature-entry"></td>
+						<td style="width: 10%;"><input type="checkbox"> Yes <input type="checkbox"> No</td>
+						<td style="width: 90%;">Student requires school staff support for their next shift?</td>
 					</tr>
 					<tr>
-						<th style="width: 15%;">Date</th>
-						<td style="width: 15%;" class="signature-entry"></td>
-						<th style="width: 15%;">Date</th>
-						<td style="width: 15%;" class="signature-entry"></td>
-						<th style="width: 15%;">Date</th>
-						<td style="width: 15%;" class="signature-entry"></td>
+						<td style="width: 10%;"><input type="checkbox"> Yes <input type="checkbox"> No</td>
+						<td style="width: 90%;">Student requires additional transportation training?</td>
+					</tr>
+					<tr>
+						<td style="width: 10%;"><input type="checkbox"> Yes <input type="checkbox"> No</td>
+						<td style="width: 90%;">Student requires monitoring prior to the minimum requirement of one (1) month?</td>
+					</tr>
+					<tr>
+						<td style="width: 10%;"><input type="checkbox"> Yes <input type="checkbox"> No</td>
+						<td style="width: 90%;">Student requires placement specific training in the classroom?</td>
+					</tr>
+					<tr>
+						<td style="width: 10%;">&nbsp;</td>
+						<td style="width: 90%;">If yes, describe (e.g., visual/checklist for task completion, knife skills, mopping, tying garbage bags, etc.)<br />
+						{{lines}}
+						</td>
+					</tr>
+				</table>
+
+				<h2>Acknowledgement</h2>
+
+				<table>
+					<tr>
+						<th style="width: 20%;">Placement Staff Signature</th>
+						<td style="width: 50%;" class="signature-entry"></td>
+						<td style="width: 30%;" colspan="2">&nbsp;</td>
+					</tr>
+					<tr>
+						<th style="width: 20%;">School Staff Signature Signature</th>
+						<td style="width: 50%;" class="signature-entry"></td>
+						<td style="width: 30%;" colspan="2">&nbsp;</td>
+					</tr>
+					<tr>
+						<th style="width: 20%;">Student Signature</th>
+						<td style="width: 50%;" class="signature-entry"></td>
+						<th style="width: 5%;">Date</th>
+						<td style="width: 20%;" class="signature-entry"></td>
 					</tr>
 				</table>
 
@@ -642,28 +660,24 @@
 						<td style="width: 35%;" class="signature-entry"><?php echo $org_name; ?></td>
 					</tr>
 					<tr>
-						<th>Monitor completed by</th>
+						<th>Completed by</th>
 						<td class="signature-entry"></td>
-						<th>Monitor type</th>
-						<td><input type="checkbox"> visit <input type="checkbox"> phone call <input type="checkbox"> email</td>
+						<th>Type</th>
+						<td><br /><input type="checkbox"> visit <input type="checkbox"> phone call <input type="checkbox"> email</td>
 					</tr>
 					<tr>
-						<th>Placement staff consulted</th>
-						<td class="signature-entry"><?php echo $org_name; ?></td>
+						<td colspan="3">&nbsp;</td>
+						<td><strong>Note:</strong> on-site visit is required once a month at minimum</td>
+					</tr>
+					<tr>
+						<th colspan="2">Placement staff consulted</th>
+						<td colspan="2" class="signature-entry"><?php echo $org_name; ?></td>
+					</tr>
+					<tr>
 						<th>Date</th>
-						<td class="signature-entry"></td>
+						<td colspan="3" class="signature-entry"></td>
 					</tr>
 				</table>
-
-
-				<h3>While at the placement, the student is:</h3>
-				
-				Working safely <input type="checkbox"> Yes <input type="checkbox"> No
-				<p class="smalltext"></p>
-				Punctual - acceptable  <input type="checkbox"> Yes <input type="checkbox"> No
-				<p class="smalltext"></p>
-				Attending regularly - acceptable  <input type="checkbox"> Yes <input type="checkbox"> No
-				<p class="smalltext"></p>
 
 				<h2>Learning Expectations to be Achieved <span>(as outlined on the student's PPLP)</span></h2>
 
@@ -673,60 +687,118 @@
 
 				<p class="hugetext"></p>
 
-				<p style="page-break-after: always;">&nbsp;</p>
+				<h2>Record of Job Coaching and Monitoring</h2>
 
+				<p>While at the placement, the student:</p>
 
-				<h2>Comments / Observations of expectations AND tasks listed above <span>(include student strengths and next steps)</span></h2>
-
-				<table class="chart">
+				<table>
 					<tr>
-						<th style="width: 50%;">Observations</th>
-						<th>Follow-up Strategy / Next Steps</th>
+						<td style="width: 20%;"><input type="checkbox"> Yes <input type="checkbox"> No</td>
+						<td style="width: 80%">Informs placement staff of arrival/departure</td>
 					</tr>
 					<tr>
-						<td style="height: 250pt;"></td>
-						<td></td>
+						<td><input type="checkbox"> Yes <input type="checkbox"> No</td>
+						<td>Is punctual</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox"> Yes <input type="checkbox"> No</td>
+						<td>Attends regularly</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox"> Yes <input type="checkbox"> No</td>
+						<td>Informs placement staff of absences</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox"> Yes <input type="checkbox"> No</td>
+						<td>Follows direction</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox"> Yes <input type="checkbox"> No</td>
+						<td>Manages time appropriately (e.g., breaks, etc.)</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox"> Yes <input type="checkbox"> No</td>
+						<td>Completes tasks at an appropriate pace</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox"> Yes <input type="checkbox"> No</td>
+						<td>Interacts appropriately with co-workers</td>
 					</tr>
 				</table>
 
-				<h2>Student Comments</h2>
+				<p style="page-break-after: always;">&nbsp;</p>
+
+				<h2>Comments / Observations of expectations AND tasks <span>(from PPLP)</span></h2>
+
+				<h3>Staff Comments <span>(include student strengths and needs)</span></h3>
+
+				<p class="hugetext"></p>
+
+				<h3>Student Comments <span>(include likes, challenges, questions, etc.)</span></h3>
 
 				<p class="bigtext"></p>
 
-				<h2>Placement Supervisor's Comments <span>(include student's strengths, improvements needed, concerns)</span></h2>
+				<h3>Placement Staff Comments <span>(include student's strengths, needs and placement concerns)</span></h2>
 
 				<p class="hugetext"></p>
+
+				<h2>Next Steps</h2>
+
+				<table>
+					<tr>
+						<td style="width: 20%;"><input type="checkbox"> Yes <input type="checkbox"> No</td>
+						<td style="width: 80%">Student requires school staff support for their next shift?</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox"> Yes <input type="checkbox"> No</td>
+						<td>Student requires monitoring prior to the minimum requirement of one (1) month?</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox"> Yes <input type="checkbox"> No</td>
+						<td>Have additional tasks been added? If yes, list and add to PPLP<br />
+						{{lines}}</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox"> Yes <input type="checkbox"> No</td>
+						<td>Student requires placement specific training in the classroom?</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>If yes, describe (e.g., visual/checklist for task completion, knife skills, mopping, tying garbage bags, etc.)<br />
+						{{lines}}</td>
+					</tr>
+				</table>
 
 				<p class="internaluse">Copies to: <input type="checkbox"> Teacher</p>
 
 				<p style="page-break-after: always;">&nbsp;</p>
 
-				<!-- WATS #7 Performance Appraisal of Learning Skills and Work Habits -->
+				<!-- WATS #7 Performance Appraisal -->
 				<div class="header">
 					<img src="https://wrdsb-ui-assets.s3.amazonaws.com/intranet/2/2.2.0/images/wats_wrdsb.png" alt="WRDSB Work and Transition Support (WATS)" style="height: 100px; width: 247px; float: left;"/>
-					<h1><span>WATS-07 [2019-09]</span><br />Performance Appraisal of Learning Skills and Work Habits</h1>
+					<h1><span>WATS-07 [2019-09]</span><br />Performance Appraisal</h1>
 				</div>
 
-				<p class="urgent">This must be completed by a qualified teacher in consultation with the Placement Supervisor and shared with the student.</p>
+				<p class="urgent">This must be completed by a qualified teacher in consultation with the placement supervisor and shared with the student.</p>
 
 				<table>
 					<tr>
-						<th style="width: 15%;">Teacher</th>
-						<td style="width: 35%;" class="signature-entry"><?php echo $teacher_name; ?></td>
+						<th style="width: 15%;">Teacher/Student</th>
+						<td style="width: 35%;" class="signature-entry"><?php echo $teacher_name; ?> <?php echo $student_name; ?></td>
 						<th style="width: 15%;">Supervisor</th>
 						<td style="width: 35%;" class="signature-entry"><?php echo $org_direct_supervisor; ?></td>
 					</tr>
 					<tr>
-						<th>Student</th>
-						<td class="signature-entry"><?php echo $student_name; ?></td>
 						<th>School</th>
 						<td class="signature-entry"><?php echo $student_homeschool; ?></td>
-					</tr>
-					<tr>
-						<th>Job Title</th>
-						<td class="signature-entry"><?php echo $student_job_title; ?></td>
 						<th>Placement</th>
 						<td class="signature-entry"><?php echo $org_name; ?></td>
+					</tr>
+					<tr>
+						<th>Date</th>
+						<td class="signature-entry"></td>
+						<th>Job Title</th>
+						<td class="signature-entry"><?php echo $student_job_title; ?></td>
 					</tr>
 					<tr>
 						<th>Placement Type</th>
@@ -736,36 +808,36 @@
 
 				<table class="chart small" style="margin-top: 15pt;">
 					<tr>
-						<th style="width: 20%;">E | Excellent</th>
-						<th style="width: 20%;">G | Good</th>
-						<th style="width: 20%;">S | Satisfactory</th>
-						<th style="width: 20%;">N | Needs Improvement</th>
-						<th style="width: 20%;">N/A | Not Applicable</th>
+						<th style="width: 18%; font-size: 8pt;">E | Excellent</th>
+						<th style="width: 18%; font-size: 8pt;">G | Good</th>
+						<th style="width: 18%; font-size: 8pt;">S | Satisfactory</th>
+						<th style="width: 26%; font-size: 8pt;">N | Needs Improvement</th>
+						<th style="width: 20%; font-size: 8pt;">N/A | Not Applicable</th>
 					</tr>
 					<tr>
-						<td>Performance <strong>consistently exceeds</strong> placement requirements.</td>
-						<td>Performance is well done and <strong>consistently meets</strong> placement requirements.</td>
-						<td>Performance meets placement requirements and is in the acceptable range.</td>
-						<td>Performance does not meet placement requirements.</td>
-						<td>Has not had an opportunity to perform.</td>
+						<td style="vertical-align: top; font-size: 8pt;">Performance <strong>consistently exceeds</strong> placement requirements.</td>
+						<td style="vertical-align: top; font-size: 8pt;">Performance is well done and <strong>consistently meets</strong> placement requirements.</td>
+						<td style="vertical-align: top; font-size: 8pt;">Performance meets placement requirements and is in the acceptable range.</td>
+						<td style="vertical-align: top; font-size: 8pt;">Performance does not meet placement requirements.</td>
+						<td style="vertical-align: top; font-size: 8pt;">Does not apply.</td>
 					</tr>
 				</table>
 
 				<table class="chart" style="margin-top: 15pt;">
 					<tr>
-						<th style="text-align: left; font-size: 8pt;"><strong>Instructions</strong>: Check the letter that most appropriately describes the quality of the student's learning skills. For the skills that students require support to perform, check the <strong>with support</strong> box. (e.g., comes prepared, arrives on time, follows dress code, etc.)</th>
+						<th style="text-align: left; font-size: 8pt; text-transform: uppercase; font-weight: normal;"><strong>Instructions</strong>: Check the letter that most appropriately describes the quality of the student's placement tasks. For the skills that students require support to perform, check the <strong>with support</strong> box.</th>
 						<th width="5%">E</th>
 						<th width="5%">G</th>
 						<th width="5%">S</th>
 						<th width="5%">N</th>
-						<th width="5%">N/A</th>
-						<th width="5%"><span style="font-size: 8pt;">With Support</span></th>
+						<th width="7%">N/A</th>
+						<th width="15%" style="font-size: 8pt;">With Support</th>
 					</tr>
 					<tr>
 						<th style="text-align: left;" colspan="7">Responsibility</th>
 					</tr>
 					<tr>
-						<td>Fulfills responsibilities and commitments</td>
+						<td>Fulfills responsibilities and commitments (e.g., comes prepared, arrives on time, follows dress code, etc.)</td>
 						<td></td>
 						<td></td>
 						<td></td>
@@ -774,7 +846,7 @@
 						<td></td>
 					</tr>
 					<tr>
-						<td>Completes assigned tasks at the placement according to the supervisor's expectations (i.e., quality)</td>
+						<td>Completes assigned tasks according to the supervisor's expectations (e.g., quality)</td>
 						<td></td>
 						<td></td>
 						<td></td>
@@ -783,7 +855,16 @@
 						<td></td>
 					</tr>
 					<tr>
-						<td>Completes assign tasks at the placement according to the established timelines (i.e., pace)</td>
+						<td>Completes assigned tasks according to the established timelines (e.g., pace)</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Demonstrates an understanding of confidentiality at the placement</td>
 						<td></td>
 						<td></td>
 						<td></td>
@@ -795,7 +876,7 @@
 						<th style="text-align: left;" colspan="7">Independence</th>
 					</tr>
 					<tr>
-						<td>Follows and completes placement's daily routines</td>
+						<td>Follows and completes assigned daily routines</td>
 						<td></td>
 						<td></td>
 						<td></td>
@@ -825,7 +906,7 @@
 						<td></td>
 					</tr>
 					<tr>
-						<td>Seeks assistance when needed</td>
+						<td>Seeks assistance when needed to complete tasks</td>
 						<td></td>
 						<td></td>
 						<td></td>
@@ -846,7 +927,7 @@
 						<th style="text-align: left;" colspan="7">Organization</th>
 					</tr>
 					<tr>
-						<td>Follows proper procedures when completing tasks</td>
+						<td>Demonstrates an ability to prioritize tasks (e.g., cleaning up spills immediately, etc.)</td>
 						<td></td>
 						<td></td>
 						<td></td>
@@ -855,7 +936,7 @@
 						<td></td>
 					</tr>
 					<tr>
-						<td>Maintains an organized work area and returns tools and equipment to proper places</td>
+						<td>Maintains an organized work area and returns tools / equipment to proper places</td>
 						<td></td>
 						<td></td>
 						<td></td>
@@ -876,7 +957,7 @@
 						<td></td>
 					</tr>
 					<tr>
-						<td>Builds healthy workplace relationships through personal and/or media-assisted interactions</td>
+						<td>Interacts appropriately at placement (e.g., polite, respects boundaries, etc.)</td>
 						<td></td>
 						<td></td>
 						<td></td>
@@ -924,7 +1005,16 @@
 						<td></td>
 					</tr>
 					<tr>
-						<td>Approaches new tasks with a positive attitude</td>
+						<td>Approaches all tasks with a positive attitude</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Shares personal information appropriately at the placement (e.g., limited sharing of personal information, social life, relationships, etc.)</td>
 						<td></td>
 						<td></td>
 						<td></td>
@@ -936,13 +1026,13 @@
 
 				<table class="chart" style="page-break-before: always;">
 					<tr>
-						<th style="text-align: left; font-size: 8pt;"><strong>Instructions</strong>: Check the letter that most appropriately describes the quality of the student's learning skills. For the skills that students require support to perform, check the <strong>with support</strong> box. (e.g., comes prepared, arrives on time, follows dress code, etc.)</th>
+						<th style="text-align: left; font-size: 8pt; text-transform: uppercase; font-weight: normal;"><strong>Instructions</strong>: Check the letter that most appropriately describes the quality of the student's placement tasks. For the skills that students require support to perform, check the <strong>with support</strong> box.</th>
 						<th width="5%">E</th>
 						<th width="5%">G</th>
 						<th width="5%">S</th>
 						<th width="5%">N</th>
-						<th width="5%">N/A</th>
-						<th width="5%"><span style="font-size: 8pt;">With Support</span></th>
+						<th width="7%">N/A</th>
+						<th width="15%" style="font-size: 8pt;">With Support</th>
 					</tr>
 					<tr>
 						<th style="text-align: left;" colspan="7">Tasks (as outlined in the student's PPLP)</th>
@@ -1008,32 +1098,57 @@
 				<table>
 					<tr>
 						<th width="10%"># absences</th>
-						<td width="5%" class="signature-entry"></td>
+						<td width="40%" class="signature-entry"></td>
 						<th width="10%"># lates</th>
-						<td width="5%" class="signature-entry"></td>
-						<th width="40%">Informed Placement Supervisor of absence/late</th>
+						<td width="40%" class="signature-entry"></td>
+					</tr>
+					<tr>
+						<th width="70%">Informed Placement Supervisor of absences/lates</th>
 						<td width="30%"><input type="checkbox"> Always <input type="checkbox"> Sometimes <input type="checkbox"> Never</td>
 					</tr>
 				</table>
 
-				<h2>Supervisor's Comments <span>(strengths / next steps)</span></h2>
+				<h2>Placement Supervisor's Comments <span>(strengths / next steps)</span></h2>
 
 				<p class="bigtext"></p>
 
-				<p>Complete <strong><em>one</em></strong> of the boxes below, based on the student's current placement type</p>
+				<p>Complete <strong><em>one</em></strong> of the boxes below, based on the student's current placement type.</p>
 
 				<table>
 					<tr>
-						<th style="text-align: left;">Traditional Work Setting</th>
-						<th style="text-align: left;">Traditional Volunteer Setting</th>
-					</tr>
-					<tr>
-						<td>Is this student competitively employable? <input type="checkbox"> Yes <input type="checkbox"> No</td>
-						<td>Is this student a suitable volunteer candidate? <input type="checkbox"> Yes <input type="checkbox"> No</td>
-					</tr>
-					<tr>
-						<td><p class="smalltext">Explain:</p></td>
-						<td><p class="smalltext">Explain:</p></td>
+						<td style="border: 1px solid #000;width: 45%;">				
+							<table>
+								<tr>
+									<th style="text-align: left;">Traditional Work Setting</th>
+								</tr>
+								<tr>
+									<td>Is this student competitively employable? <input type="checkbox"> Yes <input type="checkbox"> No</td>
+								</tr>
+								<tr>
+									<td><p class="smalltext">Explain:</p>
+										<p class="smalltext"></p>
+										<p class="smalltext"></p>
+										<p class="smalltext"></p></td>
+								</tr>
+							</table>
+						</td>
+						<td style="vertical-align: middle;text-align: center;width: 10%;"> <strong>OR</strong> </td>
+						<td style="border: 1px solid #000;width: 45%;">
+							<table>
+								<tr>
+									<th style="text-align: left;">Traditional Volunteer Setting</th>
+								</tr>
+								<tr>
+									<td>Is this student a suitable volunteer candidate? <input type="checkbox"> Yes <input type="checkbox"> No</td>
+								</tr>
+								<tr>
+									<td><p class="smalltext">Explain:</p>
+										<p class="smalltext"></p>
+										<p class="smalltext"></p>
+										<p class="smalltext"></p></td>
+								</tr>
+							</table>
+						</td>
 					</tr>
 				</table>
 
@@ -1056,10 +1171,12 @@
 					</tr>
 				</table>
 
-				<p class="internaluse"><strong>RETENTION: The Ministry of Education requires a copy of this form be kept in the student's Co-operative Education file for 12 months following completion of the program.</strong></p>
+				<p class="internaluse"><strong>RETENTION:</strong> The Ministry of Education requires a copy of this form be kept in the student's file for 12 months following completion of the program.</p>
 
-				<p class="internaluse" style="page-break-after: always;">Copies to: <input type="checkbox"> OSR <input type="checkbox"> Placement Supervisor <input type="checkbox"> WATS <br />
-					With Student Achievement Report Card: <input type="checkbox"> Teacher <input type="checkbox"> Parent / Guardian / Student</p>
+				<p class="internaluse">Copies to: <input type="checkbox"> OSR <input type="checkbox"> Placement Supervisor <input type="checkbox"> WATS  <input type="checkbox"> Teacher<br />
+					<input type="checkbox"> Parent / Guardian / Student (with Student Achievement Report Card)</p>
+
+				<p style="page-break-after: always;"></p>
 
 				<!-- WATS #8 Work Education Agreement (WEA) Addendum -->
 				<div class="header">
@@ -1067,7 +1184,7 @@
 					<h1><span>WATS-08 [2019-09]</span><br />Work Education Agreement (WEA) Addendum</h1>
 				</div>
 
-				<p><strong>Important</strong>: This addendum <strong>must</strong> be completed and signed as an adjustment to the original Work Education Agreement (WEA) each time there is a <strong>change</strong> or <strong>addition</strong> to the normal hours or dates at the training station.</p>
+				<p><strong>Important</strong>: This addendum <strong>must</strong> be completed and signed every time a change in days and/or hours is made from the original Work Education Agreement (WEA).</p>
 
 				<table>
 					<tr>
@@ -1090,7 +1207,7 @@
 
 				<h2>Section A: Permanent Change</h2>
 
-				<p>Record the <strong>original Work Education Agreement (WEA)</strong> days/hours/dates in the left column. Record <strong>NEW</strong> days/hours/dates in the right column.</p>
+				<p>Record the <strong>original Work Education Agreement (WEA)</strong> days/hours/dates in the left column. Record <strong>new</strong> days/hours/dates in the right column. Hours should include half an hour before and after actual start and end time.</p>
 
 				<table class="chart">
 					<tr>
@@ -1114,7 +1231,7 @@
 
 				<h2>Section B: Temporary Change</h2>
 
-				<p>Record the <strong>TEMPORARY CHANGE</strong> to the original WEA (i.e., temporary extra day(s) during employer's busy season or special event(s).</p>
+				<p>Record the <strong>temporary change</strong> to the original WEA (e.g., temporary extra day(s) during employer's busy season or special event(s).)</p>
 
 				<table class="chart">
 					<tr>
@@ -1131,27 +1248,27 @@
 
 				<table>
 					<tr>
-						<th style="width: 10%;"><?php echo $student_name_letter_start; ?> Signature</th>
+						<th style="width: 10%;">Student</th>
 						<td style="width: 40%;" class="signature-entry"></td>
-						<th style="width: 10%;"><?php echo $guardian_name_letter_start; ?> Signature</th>
+						<th style="width: 10%;">Parent/Guardian</th>
 						<td style="width: 40%;" class="signature-entry"></td>
 					</tr>
 					<tr>
-						<th style="width: 10%;"><?php echo $org_direct_supervisor; ?> Signature</th>
+						<th style="width: 10%;">Placement</th>
 						<td style="width: 40%;" class="signature-entry"></td>
-						<th style="width: 10%;"><?php echo $teacher_name_signature; ?> Signature</th>
+						<th style="width: 10%;">Teacher</th>
 						<td style="width: 40%;" class="signature-entry"></td>
 					</tr>
 				</table>				
 
-				<p class="internaluse">Copies to: <input type="checkbox"> OSR <input type="checkbox"> Parent / Guardian / Student <input type="checkbox"> Placement Supervisor <input type="checkbox"> Teacher (attach to the original WEA in student file) <input type="checkbox"> WATS</p>
+				<p class="internaluse">Copies to: <input type="checkbox"> OSR (attach to original WEA) <input type="checkbox"> Parent / Guardian / Student <input type="checkbox"> Placement Supervisor <input type="checkbox"> Teacher <input type="checkbox"> WATS</p>
 
 				<p style="page-break-after: always;">&nbsp;</p>
 
-				<!-- WATS #9 Student Withdrawl from Placement -->
+				<!-- WATS #9 Student Withdrawal from Placement -->
 				<div class="header">
 					<img src="https://wrdsb-ui-assets.s3.amazonaws.com/intranet/2/2.2.0/images/wats_wrdsb.png" alt="WRDSB Work and Transition Support (WATS)" style="height: 100px; width: 247px; float: left;"/>
-					<h1><span>WATS-09 [2019-09]</span><br />Student Withdrawl from Placement</h1>
+					<h1><span>WATS-09 [2019-09]</span><br />Student Withdrawal from Placement</h1>
 				</div>
 
 				<p class="urgent"><strong>Important</strong>: Notify Work &amp; Transition Support staff <strong>immediately</strong> and forward a copy of this form.</p>
@@ -1161,19 +1278,15 @@
 				<table>
 					<tr>
 						<th style="width: 10%;">Student</th>
-						<td style="width: 20%;" class="signature-entry"><?php echo $student_name; ?></td>
-						<th style="width: 10%;">Teacher</th>
-						<td style="width: 20%;" class="signature-entry"><?php echo $teacher_name; ?></td>
-						<th style="width: 10%;">School</th>
-						<td style="width: 20%;" class="signature-entry"><?php echo $student_homeschool; ?></td>
+						<td style="width: 40%;" class="signature-entry"><?php echo $student_name; ?></td>
+						<th style="width: 15%;">Teacher / School</th>
+						<td style="width: 35%;" class="signature-entry"><?php echo $teacher_name; ?> <?php echo $student_homeschool; ?></td>
 					</tr>
 					<tr>
 						<th style="width: 10%;">Placement</th>
-						<td style="width: 20%;" class="signature-entry"><?php echo $org_name; ?></td>
-						<th style="width: 10%;">Placement Supervisor</th>
-						<td style="width: 20%;" class="signature-entry"><?php echo $org_direct_supervisor; ?></td>
-						<th style="width: 10%;">Placement Address</th>
-						<td style="width: 20%;" class="signature-entry"><?php echo $org_address; ?></td>
+						<td style="width: 40%;" class="signature-entry"><?php echo $org_name; ?></td>
+						<th style="width: 15%;">Placement Supervisor</th>
+						<td style="width: 35%;" class="signature-entry"><?php echo $org_direct_supervisor; ?></td>
 					</tr>
 				</table>
 
@@ -1181,34 +1294,36 @@
 
 				<table class="chart">
 					<tr>
-						<th style="width: 15%;">Start date of Placement</th>
-						<td colspan="3"></td>
+						<th style="width: 25%;">Start date of Placement</th>
+						<td></td>
 					</tr>
 					<tr>
-						<th style="width: 15%;">Date removed from Placement</th>
-						<td style="width: 30%;"></td>
-						<th style="width: 15%;">Number of shifts attended</th>
-						<td style="width: 30%;"></td>
+						<th>Date removed from Placement</th>
+						<td></td>
+					</tr>
+					<tr>
+						<th>Number of shifts attended</th>
+						<td></td>
 					</tr>
 					<tr>
 						<th>Reason</th>
-						<td colspan="3"><br /><br /><br /><br /></td>
+						<td><br /><br /><br /><br /><br /><br /><br /><br /></td>
 					</tr>
 					<tr>
 						<th>Method of follow-up with the Placement Supervisor</th>
-						<td colspan="3"><input type="checkbox"> Visit <input type="checkbox"> Phone call <input type="checkbox"> Email</td>
+						<td><input type="checkbox"> Visit <input type="checkbox"> Phone call <input type="checkbox"> Email</td>
 					</tr>
 					<tr>
 						<th>Placement Supervisor Comments</th>
-						<td colspan="3"><br /><br /><br /><br /></td>
+						<td><br /><br /><br /><br /><br /><br /><br /><br /></td>
 					</tr>
 					<tr>
 						<th>Was a Performance Appraisal completed upon termination?</th>
-						<td colspan="3"><input type="checkbox"> Yes <input type="checkbox"> No</td>
+						<td><input type="checkbox"> Yes <input type="checkbox"> No</td>
 					</tr>
 					<tr>
 						<th>Considerations for future placements</th>
-						<td colspan="3"><br /><br /><br /><br /></td>
+						<td><br /><br /><br /><br /><br /><br /><br /><br /></td>
 					</tr>
 				</table>
 
@@ -1230,26 +1345,26 @@
 				<!-- WATS #10 Student Volunteer Criminal Records Check -->
 				<div class="header">
 					<img src="https://wrdsb-ui-assets.s3.amazonaws.com/intranet/2/2.2.0/images/wats_wrdsb.png" alt="WRDSB Work and Transition Support (WATS)" style="height: 100px; width: 247px; float: left;"/>
-					<h1><span>WATS-10 [2019-09]</span><br />Student Volunteer Criminal Records Check</h1>
+					<h1><span>WATS-10 [2019-09]</span><br />Student Volunteer Vulnerable Sector Check<br /><span>(applicable only to students 18+)</span></h1>
 				</div>
 
 				<div class="letter">
 
 					<p>Waterloo Regional Police Services<br />
-						Headquarters Reception<br />
-						200 Maple Grove Road, P.O. Box 3070<br />
+					Reporting Centre<br />
+					200 Maple Grove Road<br />
 					Cambridge ON &nbsp;N3H 5M1</p>
 
 					<p>To whom it may concern:</p>
 
-					<p><strong>Re: Student Volunteer Vulnerable Sector Records Check</strong></p>
+					<p><strong>Re: Student Volunteer Vulnerable Sector Check</strong></p>
 
 					<table>
 						<tr>
-							<th style="width: 15%;">Student</th>
-							<td style="width: 35%;" class="signature-entry"><?php echo $student_name; ?></td>
-							<th style="width: 15%;">Date</th>
-							<td style="width: 35%;" class="signature-entry"></td>
+							<th style="width: 25%;">Student</th>
+							<td style="width: 25%;" class="signature-entry"><?php echo $student_name; ?></td>
+							<th style="width: 25%;">Date</th>
+							<td style="width: 25%;" class="signature-entry"></td>
 						</tr>
 						<tr>
 							<th>Placement</th>
@@ -1259,7 +1374,7 @@
 						</tr>
 					</table>
 
-					<p>This is to inform you the above student will be participating in a community placement and requires a vulnerable sector records check.</p>
+					<p>This is to inform you the above student will be participating in a school community placement and requires a Vulnerable Sector Check, as per placement requirements.</p>
 
 					<p>Should you have any questions, please contact:</p>
 
@@ -1270,21 +1385,22 @@
 						</tr>
 						<tr>
 							<th style="width: 10%;">School</th>
-							<td style="width: 40%;" class="signature-entry"><?php echo $student_homeschool; ?></td>
+							<td style="width: 60%;" class="signature-entry"><?php echo $student_homeschool; ?></td>
 							<th style="width: 10%;">Telephone</th>
-							<td style="width: 40%;" class="signature-entry"><?php echo $teacher_phone; ?></td>
+							<td style="width: 20%;" class="signature-entry"><?php echo $teacher_phone; ?></td>
 						</tr>
 					</table>
 
-					<p>Thank you for your assistance in this matter.</p>
+					<p>Thank you for your assistance.</p>
 
-					<p>Yours sincerely,<br /><br /><br /><br /><br /><br />Classroom Teacher</p>
+					<p>Yours sincerely,<br /><br /><br /><br /><br /><br />WRDSB Classroom Teacher</p>
 
 				</div>				
 
 				<p style="page-break-after: always;">&nbsp;</p>
 
 				<!-- WATS #11 Data Collection of Student Placement Hours to the Ministry of Education -->
+
 				<div class="header">
 					<img src="https://wrdsb-ui-assets.s3.amazonaws.com/intranet/2/2.2.0/images/wats_wrdsb.png" alt="WRDSB Work and Transition Support (WATS)" style="height: 100px; width: 247px; float: left;"/>
 					<h1><span>WATS-11 [2019-09]</span><br />Data Collection of Student Placement Hours to the Ministry of Education</h1>
@@ -1298,15 +1414,15 @@
 						<th width="10%">Year</th>
 						<td width="30%" class="signature-entry"></td>
 					</tr>
-				<table>
+				</table>
 
-				<h2>Teacher Instructions <span>use of this form</span></h2>
+				<h2>Teacher Instructions</h2>
 
 				<p>Teachers are required to report all hours completed by students who participated in a placement.</p>
 
-				<p><strong>Note</strong>: Total Actual hours completed subtracts days absent from total scheduled hours.</p>
+				<p><strong>Note</strong>: To calculate total actual hours, subtract days absent from total scheduled hours.</p>
 
-				<p class="urgent"><strong>Submit form to Learning Support Services &ndash; Experiential Learning, Education Centre IMMEDIATELY after the last student work day of the school year.</strong></p>
+				<p class="urgent"><strong>Submit form to Learning Support Services &ndash; Experiential Learning, Education Centre PRIOR to the last day of school.</strong></p>
 
 				<h2>School Information</h2>
 
@@ -1322,15 +1438,15 @@
 				</table>
 
 
-				<h2>Student Placement Hours</h2>
+				<h2>Student Placement Hours <span>(Note: one line per student per placement)</span></h2>
 
 				<table class="chart">
 					<tr>
 						<th width="40%">Name of Student</th>
 						<th width="15%">Placement start date</th>
 						<th width="15%">Placement end date</th>
-						<th width="15%">Total Actual unpaid hours completed</th>
-						<th width="15%">Total Actual paid hours worked</th>
+						<th width="15%">Total actual unpaid hours completed</th>
+						<th width="15%">Total actual paid hours completed</th>
 					</tr>
 					<tr>
 						<td></td>
@@ -1457,6 +1573,60 @@
 						<td></td>
 					</tr>					
 				</table>
+
+				<p style="page-break-after: always;">&nbsp;</p>
+
+				<!-- WATS #12 Transportation at the Placement, Parent/Guardian Content -->
+				<div class="header">
+					<img src="https://wrdsb-ui-assets.s3.amazonaws.com/intranet/2/2.2.0/images/wats_wrdsb.png" alt="WRDSB Work and Transition Support (WATS)" style="height: 100px; width: 247px; float: left;"/>
+					<h1><span>WATS-12 [2019-12]</span><br />Transportation at the Placement<br />
+					Parent/Guardian Consent</h1>
+				</div>
+
+				<h2>Student Information</h2>
+
+				<table>
+					<tr>
+						<th style="width: 10%;">Student</th>
+						<td style="width: 40%;" class="signature-entry"><?php echo $student_name; ?></td>
+						<th style="width: 10%;">Placement</th>
+						<td style="width: 40%;" class="signature-entry"><?php echo $org_name; ?></td>
+					</tr>
+					<tr>
+						<th style="width: 10%;">School</th>
+						<td style="width: 40%;" class="signature-entry"><?php echo $student_homeschool; ?></td>
+						<th style="width: 10%;">School Year</th>
+						<td style="width: 40%;" class="signature-entry"></td>
+					</tr>
+				</table>
+
+				<h2>Parent/Guardian Information</h2>
+
+				<h3>Transportation at the Placement</h3>
+				<ul>
+					<li>As part of your child's placement, they may be required to be transported from one location to another by the placement supervisor or designate on a regular basis.</li>
+					<li>The employer must ensure that any individual who transports the student in the course of the placement be properly licensed and insured and have completed the WRDSB/OSBIE Volunteer Driver - Authorization to Transport Students form (FS-18-IA5).</li>
+				</ul>
+
+				<h2>Acknowledgement and Consent</h2>
+
+				<p>We have read the information on the transportation at the placement and hereby grant permission for <?php echo $student_name; ?> to participate in the placement according to the information outlined above.</p>
+
+				<table>
+					<tr>
+						<th style="width: 10%;">Student</th>
+						<td style="width: 40%;" class="signature-entry"><?php echo $student_name; ?></td>
+						<th style="width: 10%;">Parent/Guardian</th>
+						<td style="width: 40%;" class="signature-entry"><?php echo $org_name; ?></td>
+					</tr>
+					<tr>
+						<th style="width: 10%;">Date</th>
+						<td style="width: 40%;" class="signature-entry"><?php echo $student_homeschool; ?></td>
+						<th style="width: 10%;">&nbsp;</th>
+						<td style="width: 40%;">&nbsp;</td>
+					</tr>
+				</table>
 			</body>
 		</html>
+
 <?php }
