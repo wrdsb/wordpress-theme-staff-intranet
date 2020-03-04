@@ -1,3 +1,6 @@
+## 2.2.1
++ fix name on link in footer
+
 ## 2.2.0
 + new masthead code
 + updated link to ui assets
