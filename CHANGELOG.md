@@ -1,3 +1,6 @@
+## 2.2.2
+- remove function forcing redirect to top level on log in so deep links work
+
 ## 2.2.1
 + fix name on link in footer
 
