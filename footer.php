@@ -67,6 +67,9 @@
                 <?php if (wrdsb_get_school_code()) { ?>
                     <p><a id="" style="color:white" href="<?php echo get_site_url(); ?>/trillium/classes">Class lists</a></p>
                 <?php } ?>
+                <?php if (wrdsb_get_school_code()) { ?>
+                    <p><a id="" style="color:white" href="<?php echo get_site_url(); ?>/quartermaster/device-loans/all">LFH Device Tracking</a></p>
+                <?php } ?>
                 <p><a id="footer-link-trillium-report-centre" style="color:white" target="_blank" href="http://ec-oraapp1.wrdsb.ca:8888/forms/frmservlet?config=TRRP">Trillium Report Centre</a></p>
                 <p><a id="footer-link-school-day" style="color:white" target="_blank" href="https://www.school-day.com/">School Day</a></p>
                 <p><a id="footer-link-ssr" style="color:white" href="/eguide/">Single Source Resource (eGuide)</a></p>
