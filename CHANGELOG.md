@@ -1,3 +1,12 @@
+## 2.2.3
++ add new link to footer for finding new Device Loan pages in school handbooks
+
+## 2.2.2
+- remove function forcing redirect to top level on log in so deep links work
+
+## 2.2.1
++ fix name on link in footer
+
 ## 2.2.0
 + new masthead code
 + updated link to ui assets

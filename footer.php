@@ -38,7 +38,7 @@
             <div class="col-sm-6 col-md-3" aria-labelledby="">
                 <h1 id="footer-menu-help">Help!</h1>
                 <p><a id="footer-link-sds" style="color:white" target="_blank" href="https://msdsmanagement.msdsonline.com/company/ccc3134c-662d-499b-862d-39480a4688ed/">SDS Quick Search (MSDS)</a></p>
-                <p><a id="footer-link-osbie" style="color:white" target="_blank" href="http://osbie.wrdsb.ca/">OSBIE Incident Reporting System</a></p>
+                <p><a id="footer-link-osbie" style="color:white" target="_blank" href="http://osbie.wrdsb.ca/">OSBIE Injury Reporting System</a></p>
                 <p><a id="footer-link-help-desk" style="color:white" target="_blank" href="https://itservicedesk.wrdsb.ca/">ITService Desk (Help Desk)</a></p>
             </div>
 
@@ -66,6 +66,9 @@
                 <h1 id="footer-menu-school-staff">For School Staff</h1>
                 <?php if (wrdsb_get_school_code()) { ?>
                     <p><a id="" style="color:white" href="<?php echo get_site_url(); ?>/trillium/classes">Class lists</a></p>
+                <?php } ?>
+                <?php if (wrdsb_get_school_code()) { ?>
+                    <p><a id="" style="color:white" href="<?php echo get_site_url(); ?>/quartermaster/device-loans/all">LFH Device Tracking</a></p>
                 <?php } ?>
                 <p><a id="footer-link-trillium-report-centre" style="color:white" target="_blank" href="http://ec-oraapp1.wrdsb.ca:8888/forms/frmservlet?config=TRRP">Trillium Report Centre</a></p>
                 <p><a id="footer-link-school-day" style="color:white" target="_blank" href="https://www.school-day.com/">School Day</a></p>

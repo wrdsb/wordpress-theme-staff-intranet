@@ -469,11 +469,17 @@ function current_user_can_view_content()
  *
  * @return string URL to redirect to on login. Must be absolute.
  */
+/**
+
+Removed 2020-05-25 SZC so the redirect works properly
+
 function wrdsb_forcelogin_redirect()
 {
     return home_url('/');
 }
 add_filter('v_forcelogin_redirect', 'wrdsb_forcelogin_redirect');
+
+**/
 
 function wrdsb_forcelogin_hide_backtoblog()
 {
