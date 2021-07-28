@@ -1,3 +1,9 @@
+## 2.2.4
++ update PD Place to ProLearn in the footer request 50252
++ add URL for Equity and Inclusion in Training section of footer (missing)
++ add icon for Guides
++ update HTML for accessibility compliance
+
 ## 2.2.3
 + add new link to footer for finding new Device Loan pages in school handbooks
 
