@@ -1,3 +1,6 @@
+## 2.2.5
++ update screenshot (issue #3)
+
 ## 2.2.4
 + update PD Place to ProLearn in the footer request 50252
 + add URL for Equity and Inclusion in Training section of footer (missing)
