@@ -101,6 +101,9 @@
                     <?php if (wrdsb_get_school_code()) { ?>
                     <li><a id="footer-link-device-tracking" href="<?php echo get_site_url(); ?>/quartermaster/device-loans/all">LFH Device Tracking</a></li>
                     <?php } ?>
+                    <?php if (wrdsb_get_school_code()) { ?>
+                    <li><a id="footer-link-device-tracking" href="<?php echo get_site_url(); ?>/school-data/home">School Data Collection</a></li>
+                    <?php } ?>
                     <li><a id="footer-link-mental-health" href="/mental-health/"><img src="https://staff.wrdsb.ca/wp-content/uploads/2021/07/streamline-icon-bookmarks-document@48x48.png" class="guide-icon" alt="WRDSB Product Guide" />Mental Health Guide</a></li>
                     <li><a id="footer-link-school-day" target="_blank" href="https://www.school-day.com/">School Day</a></li>
                     <li><a id="footer-link-ssr" href="/eguide/"><img src="https://staff.wrdsb.ca/wp-content/uploads/2021/07/streamline-icon-bookmarks-document@48x48.png" class="guide-icon" alt="WRDSB Product Guide" />Single Source Resource</a></li>
