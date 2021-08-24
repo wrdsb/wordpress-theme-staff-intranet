@@ -1,3 +1,7 @@
+## 2.2.6
++ change LHF Device Tracking to Device Deployment
++ add link for School Data Collection
+
 ## 2.2.5
 + update screenshot (issue #3)
 
